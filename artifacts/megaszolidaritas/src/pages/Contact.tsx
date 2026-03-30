@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { MapPin, Mail, Globe } from "lucide-react";
+import { WEB3FORMS_ACCESS_KEY, WEB3FORMS_ENDPOINT } from "@/config/web3forms";
+
+type Status = "idle" | "loading" | "success" | "error";
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -14,11 +17,41 @@ export default function Contact() {
     subject: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus("loading");
+
+    const payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: `[SOLIDARIEDADE RODRIGUES] ${formData.subject} — ${formData.firstName} ${formData.lastName}`,
+      from_name: "Solidariedade Rodrigues — Contact",
+      Civilité: formData.title,
+      Nom: formData.lastName,
+      Prénom: formData.firstName,
+      Email: formData.email,
+      Téléphone: formData.phone || "—",
+      Pays: formData.country,
+      Sujet: formData.subject,
+      Message: formData.message,
+    };
+
+    try {
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -39,16 +72,28 @@ export default function Contact() {
             <div className="md:col-span-2">
               <div className="bg-white rounded-xl shadow-lg p-8">
                 <p className="text-gray-600 mb-6">{t.contact.formDesc}</p>
-                {submitted ? (
+                {status === "success" ? (
                   <div className="text-center py-12">
                     <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <span className="text-4xl">✓</span>
                     </div>
                     <h3 className="text-2xl font-bold text-[#2e7d32] mb-2">Merci !</h3>
                     <p className="text-gray-600">Votre message a été envoyé avec succès.</p>
+                    <button
+                      onClick={() => { setStatus("idle"); setFormData({ title: "", lastName: "", firstName: "", email: "", phone: "", country: "", subject: "", message: "" }); }}
+                      className="mt-6 text-sm text-[#2e7d32] underline"
+                    >
+                      Envoyer un autre message
+                    </button>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
+                    {status === "error" && (
+                      <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 text-sm">
+                        Une erreur est survenue. Veuillez réessayer ou nous écrire directement à contact@solidariedaderodrigues.org
+                      </div>
+                    )}
+
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">{t.contact.titleLabel}</label>
                       <select
@@ -58,9 +103,9 @@ export default function Contact() {
                         required
                       >
                         <option value="">--</option>
-                        <option value="mr">{t.contact.mr}</option>
-                        <option value="mrs">{t.contact.mrs}</option>
-                        <option value="miss">{t.contact.miss}</option>
+                        <option value="Mr">{t.contact.mr}</option>
+                        <option value="Mme">{t.contact.mrs}</option>
+                        <option value="Mlle">{t.contact.miss}</option>
                       </select>
                     </div>
 
@@ -143,9 +188,10 @@ export default function Contact() {
 
                     <button
                       type="submit"
-                      className="w-full bg-[#2e7d32] hover:bg-[#1b5e20] text-white font-bold py-4 rounded-lg transition-colors text-lg"
+                      disabled={status === "loading"}
+                      className="w-full bg-[#2e7d32] hover:bg-[#1b5e20] disabled:opacity-60 text-white font-bold py-4 rounded-lg transition-colors text-lg"
                     >
-                      {t.contact.submit}
+                      {status === "loading" ? "Envoi en cours…" : t.contact.submit}
                     </button>
                   </form>
                 )}
@@ -167,8 +213,8 @@ export default function Contact() {
                     <Mail className="w-5 h-5 text-[#2e7d32] mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="text-xs text-gray-500 font-semibold uppercase mb-1">{t.contact.emailLabel}</p>
-                      <a href="mailto:contact@megaszolidaritas.org" className="text-[#2e7d32] hover:underline text-sm">
-                        contact@megaszolidaritas.org
+                      <a href="mailto:contact@solidariedaderodrigues.org" className="text-[#2e7d32] hover:underline text-sm">
+                        contact@solidariedaderodrigues.org
                       </a>
                     </div>
                   </div>
@@ -176,7 +222,7 @@ export default function Contact() {
                     <Globe className="w-5 h-5 text-[#2e7d32] mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="text-xs text-gray-500 font-semibold uppercase mb-1">{t.contact.website}</p>
-                      <span className="text-gray-700 text-sm">www.megaszolidaritas.org</span>
+                      <span className="text-gray-700 text-sm">solidariedaderodrigues.org</span>
                     </div>
                   </div>
                 </div>

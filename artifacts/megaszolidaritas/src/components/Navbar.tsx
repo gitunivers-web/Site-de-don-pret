@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Language, languageNames, languageFlags } from "@/i18n/translations";
-import { Menu, X, ChevronDown, Globe } from "lucide-react";
+import { Menu, X, ChevronDown, Globe, Heart } from "lucide-react";
 
 const languages: Language[] = ["hu", "fr", "en", "it", "de", "es", "pt", "nl", "ro", "pl"];
 
@@ -11,8 +11,6 @@ export default function Navbar() {
   const [location] = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-
-  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
   const navLinks = [
     { label: t.nav.home, href: "/" },
@@ -26,13 +24,13 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-[#2e7d32] rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xs">MS</span>
+          <Link href="/" className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-[#2e7d32] rounded-full flex items-center justify-center shadow-sm">
+              <Heart className="w-5 h-5 text-white fill-white" />
             </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-[#2e7d32] text-sm leading-tight">MEGA</span>
-              <span className="font-bold text-[#f57c00] text-xs leading-tight">SZOLIDARITÁS</span>
+            <div className="flex flex-col leading-tight">
+              <span className="font-bold text-[#2e7d32] text-sm leading-tight tracking-tight">SOLIDARIEDADE</span>
+              <span className="font-bold text-[#f57c00] text-xs leading-tight tracking-wide">RODRIGUES</span>
             </div>
           </Link>
 

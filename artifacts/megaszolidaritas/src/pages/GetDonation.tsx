@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { WEB3FORMS_ACCESS_KEY, WEB3FORMS_ENDPOINT } from "@/config/web3forms";
+
+type Status = "idle" | "loading" | "success" | "error";
 
 export default function GetDonation() {
   const { t } = useLanguage();
@@ -14,11 +17,44 @@ export default function GetDonation() {
     amount: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus("loading");
+
+    const subject = `[SOLIDARIEDADE RODRIGUES] Demande de don — ${formData.firstName} ${formData.lastName}`;
+
+    const payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject,
+      from_name: "Solidariedade Rodrigues — Obtenir un don",
+      Civilité: formData.title,
+      Nom: formData.lastName,
+      Prénom: formData.firstName,
+      Email: formData.email,
+      Téléphone: formData.phone || "—",
+      Pays: formData.country,
+      "Type de don": formData.donationType,
+      "Montant (EUR)": formData.donationType === "cash" ? formData.amount : "—",
+      Message: formData.message || "—",
+    };
+
+    try {
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -36,16 +72,28 @@ export default function GetDonation() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-2xl mx-auto px-4">
           <div className="bg-white rounded-xl shadow-lg p-8">
-            {submitted ? (
+            {status === "success" ? (
               <div className="text-center py-12">
                 <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-4xl">✓</span>
                 </div>
                 <h3 className="text-2xl font-bold text-[#2e7d32] mb-2">Merci !</h3>
                 <p className="text-gray-600">Votre demande a été envoyée avec succès. Nous vous contacterons bientôt.</p>
+                <button
+                  onClick={() => { setStatus("idle"); setFormData({ title: "", lastName: "", firstName: "", email: "", phone: "", country: "", donationType: "", amount: "", message: "" }); }}
+                  className="mt-6 text-sm text-[#2e7d32] underline"
+                >
+                  Soumettre une nouvelle demande
+                </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
+                {status === "error" && (
+                  <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 text-sm">
+                    Une erreur est survenue. Veuillez réessayer ou nous contacter par email.
+                  </div>
+                )}
+
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">{t.getDonation.titleLabel}</label>
                   <select
@@ -55,9 +103,9 @@ export default function GetDonation() {
                     required
                   >
                     <option value="">--</option>
-                    <option value="mr">{t.getDonation.mr}</option>
-                    <option value="mrs">{t.getDonation.mrs}</option>
-                    <option value="miss">{t.getDonation.miss}</option>
+                    <option value="Mr">{t.getDonation.mr}</option>
+                    <option value="Mme">{t.getDonation.mrs}</option>
+                    <option value="Mlle">{t.getDonation.miss}</option>
                   </select>
                 </div>
 
@@ -125,12 +173,12 @@ export default function GetDonation() {
                     required
                   >
                     <option value="">--</option>
-                    <option value="inKind">{t.getDonation.inKind}</option>
-                    <option value="cash">{t.getDonation.cash}</option>
+                    <option value="En nature">{t.getDonation.inKind}</option>
+                    <option value="Espèces">{t.getDonation.cash}</option>
                   </select>
                 </div>
 
-                {formData.donationType === "cash" && (
+                {formData.donationType === "Espèces" && (
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">{t.getDonation.amount}</label>
                     <input
@@ -141,7 +189,7 @@ export default function GetDonation() {
                       value={formData.amount}
                       onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
                     />
-                    <p className="text-xs text-gray-500 mt-1">Min: 5,000 EUR – Max: 150,000 EUR</p>
+                    <p className="text-xs text-gray-500 mt-1">Min: 5 000 EUR – Max: 150 000 EUR</p>
                   </div>
                 )}
 
@@ -157,9 +205,10 @@ export default function GetDonation() {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#2e7d32] hover:bg-[#1b5e20] text-white font-bold py-4 rounded-lg transition-colors text-lg"
+                  disabled={status === "loading"}
+                  className="w-full bg-[#2e7d32] hover:bg-[#1b5e20] disabled:opacity-60 text-white font-bold py-4 rounded-lg transition-colors text-lg"
                 >
-                  {t.getDonation.submit}
+                  {status === "loading" ? "Envoi en cours…" : t.getDonation.submit}
                 </button>
               </form>
             )}

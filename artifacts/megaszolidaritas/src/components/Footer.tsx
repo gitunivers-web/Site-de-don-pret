@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { MapPin, Mail, Globe } from "lucide-react";
+import { MapPin, Mail, Globe, Heart } from "lucide-react";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -22,12 +22,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-[#2e7d32] rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">MS</span>
+            <div className="w-12 h-12 bg-[#2e7d32] rounded-full flex items-center justify-center shadow-sm">
+              <Heart className="w-6 h-6 text-white fill-white" />
             </div>
-            <div>
-              <div className="font-bold text-[#4caf50] text-lg">MEGA</div>
-              <div className="font-bold text-[#f57c00] text-sm">SZOLIDARITÁS</div>
+            <div className="leading-tight">
+              <div className="font-bold text-[#4caf50] text-base tracking-tight">SOLIDARIEDADE</div>
+              <div className="font-bold text-[#f57c00] text-sm tracking-wide">RODRIGUES</div>
             </div>
           </div>
           <p className="text-gray-400 text-sm leading-relaxed">
@@ -63,20 +63,20 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-3">
               <Mail className="w-4 h-4 text-[#4caf50] flex-shrink-0" />
-              <a href="mailto:contact@megaszolidaritas.org" className="text-gray-400 hover:text-[#4caf50] text-sm transition-colors">
-                contact@megaszolidaritas.org
+              <a href="mailto:contact@solidariedaderodrigues.org" className="text-gray-400 hover:text-[#4caf50] text-sm transition-colors">
+                contact@solidariedaderodrigues.org
               </a>
             </div>
             <div className="flex items-center gap-3">
               <Globe className="w-4 h-4 text-[#4caf50] flex-shrink-0" />
-              <span className="text-gray-400 text-sm">www.megaszolidaritas.org</span>
+              <span className="text-gray-400 text-sm">solidariedaderodrigues.org</span>
             </div>
           </div>
         </div>
       </div>
 
       <div className="border-t border-gray-800 py-4 text-center">
-        <p className="text-gray-500 text-sm">© 2024 MEGA SZOLIDARITÁS. All rights reserved.</p>
+        <p className="text-gray-500 text-sm">© 2024 SOLIDARIEDADE RODRIGUES. All rights reserved.</p>
       </div>
     </footer>
   );
