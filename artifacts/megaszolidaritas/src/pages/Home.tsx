@@ -1,73 +1,39 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { ChevronLeft, ChevronRight, Heart } from "lucide-react";
+import { ChevronLeft, ChevronRight, Users, Gift, HeartHandshake, Star } from "lucide-react";
 
 const slides = [
-  {
-    image: "https://www.megaszolidaritas.org/images/home02-3.jpg",
-    key: "slide1",
-  },
-  {
-    image: "https://www.megaszolidaritas.org/images/home04-3.jpg",
-    key: "slide2",
-  },
+  { image: "https://www.megaszolidaritas.org/images/home02-3.jpg", key: "slide1" },
+  { image: "https://www.megaszolidaritas.org/images/home04-3.jpg", key: "slide2" },
 ];
 
 const causes = [
-  {
-    image: "https://www.megaszolidaritas.org/images/cagnotte1.jpg",
-    collected: "€ 2.580,00",
-    percent: 53,
-    key: "cause1",
-  },
-  {
-    image: "https://www.megaszolidaritas.org/images/cause-img-5.jpg",
-    collected: "€ 26.812,00",
-    percent: 72,
-    key: "cause2",
-  },
-  {
-    image: "https://www.megaszolidaritas.org/images/cause-img-2.jpg",
-    collected: "€ 7.198,00",
-    percent: 32,
-    key: "cause3",
-  },
+  { image: "https://www.megaszolidaritas.org/images/cagnotte1.jpg", collected: "€ 2.580,00", percent: 53, key: "cause1" },
+  { image: "https://www.megaszolidaritas.org/images/cause-img-5.jpg", collected: "€ 26.812,00", percent: 72, key: "cause2" },
+  { image: "https://www.megaszolidaritas.org/images/cause-img-2.jpg", collected: "€ 7.198,00", percent: 32, key: "cause3" },
 ];
 
-const testimonials = [
-  {
-    image: "https://www.megaszolidaritas.org/images/testimony-thumb-1.jpg",
-    text: "Hugo Schulz vagyok, német állampolgár. 2012-ben fedeztem fel ezt az alapítványt, amikor pénzügyi problémáim voltak a bankommal. Ez az alapítvány támogatott engem, és 30 000 euró ingyenes alappal segített nekem anélkül, hogy visszatérítést kértem volna.",
-    name: "Hugo Schulz",
-    nationality: "Német",
-  },
-  {
-    image: "https://www.megaszolidaritas.org/images/volunteer-4.jpg",
-    text: "HELENE BUGLIONI vagyok, olasz állampolgár. Ez az alapítvány segített nekem, amikor 2018-ban méhrákot diagnosztizáltak nálam és műtétre volt szükségem. Egy hónap múlva megkaptam a pénzügyi támogatásukat, és nekik köszönhetően jól vagyok.",
-    name: "Helene Buglioni",
-    nationality: "Olasz",
-  },
-  {
-    image: "https://www.megaszolidaritas.org/images/testimony-thumb-8.jpg",
-    text: "Joakim Greger vagyok, svéd állampolgár. A házamat majdnem lefoglalták, a vállalkozásom már nem működött, de a segítségüket kérve 150 000 eurót kaptam ingyen, visszatérítés nélkül.",
-    name: "Joakim Greger",
-    nationality: "Svéd",
-  },
-  {
-    image: "https://www.megaszolidaritas.org/images/testimony-thumb-7.jpg",
-    text: "Antoni Gaetano vagyok, olasz. Elbocsátottak a munkahelyemről, amikor online felfedeztem ezt az alapítványt. Néhány héttel később jelentős támogatást kaptam. Ma már saját szépségszalonom van.",
-    name: "Antoni Gaetano",
-    nationality: "Olasz",
-  },
+const testimonialImages = [
+  "https://www.megaszolidaritas.org/images/testimony-thumb-1.jpg",
+  "https://www.megaszolidaritas.org/images/volunteer-4.jpg",
+  "https://www.megaszolidaritas.org/images/testimony-thumb-8.jpg",
+  "https://www.megaszolidaritas.org/images/testimony-thumb-7.jpg",
+];
+
+const fallbackImages = [
+  "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=80&h=80&fit=crop&face",
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&face",
+  "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=80&h=80&fit=crop&face",
+  "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&h=80&fit=crop&face",
 ];
 
 const vipDonors = [
-  { image: "https://www.megaszolidaritas.org/images/1a.jpg", name: "Susanne KLatten", nationality: "Német" },
-  { image: "https://www.megaszolidaritas.org/images/2a.jpg", name: "Van Haeften Sophie", nationality: "Holland" },
-  { image: "https://www.megaszolidaritas.org/images/3a.jpg", name: "Maria Giovanna Barilla", nationality: "Olasz" },
-  { image: "https://www.megaszolidaritas.org/images/4a.jpg", name: "Ghermezian Pierre", nationality: "Kanadai" },
-  { image: "https://www.megaszolidaritas.org/images/5a.jpg", name: "Christopher johnson", nationality: "Amerikai" },
+  { image: "https://www.megaszolidaritas.org/images/1a.jpg", name: "Susanne KLatten", country: "🇩🇪" },
+  { image: "https://www.megaszolidaritas.org/images/2a.jpg", name: "Van Haeften Sophie", country: "🇳🇱" },
+  { image: "https://www.megaszolidaritas.org/images/3a.jpg", name: "Maria Giovanna Barilla", country: "🇮🇹" },
+  { image: "https://www.megaszolidaritas.org/images/4a.jpg", name: "Ghermezian Pierre", country: "🇨🇦" },
+  { image: "https://www.megaszolidaritas.org/images/5a.jpg", name: "Christopher Johnson", country: "🇺🇸" },
 ];
 
 export default function Home() {
@@ -88,8 +54,8 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero Slider */}
-      <section className="relative h-[500px] md:h-[600px] overflow-hidden">
+      {/* ── Hero Slider ── */}
+      <section className="relative h-[500px] md:h-[620px] overflow-hidden">
         {slides.map((slide, idx) => (
           <div
             key={slide.key}
@@ -99,21 +65,19 @@ export default function Home() {
               src={slide.image}
               alt=""
               className="w-full h-full object-cover"
-              onError={(e) => {
-                (e.target as HTMLImageElement).style.display = "none";
-              }}
+              onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
             />
-            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-black/55" />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-              <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+              <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-5 drop-shadow-xl tracking-tight leading-tight">
                 {slideContent[idx].title}
               </h1>
-              <p className="text-lg md:text-xl text-white mb-8 drop-shadow max-w-2xl">
+              <p className="text-xl md:text-2xl text-white/90 mb-10 drop-shadow max-w-2xl">
                 {slideContent[idx].desc}
               </p>
               <Link
                 href={slideContent[idx].href}
-                className="bg-[#f57c00] hover:bg-[#e65100] text-white font-bold px-8 py-3 rounded transition-colors text-lg"
+                className="bg-[#f57c00] hover:bg-[#e65100] text-white font-bold px-10 py-4 rounded transition-all duration-200 text-lg shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
               >
                 {slideContent[idx].btn}
               </Link>
@@ -122,17 +86,17 @@ export default function Home() {
         ))}
         <button
           onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-colors"
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/50 text-white p-3 rounded-full transition-colors"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
         <button
           onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-colors"
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/50 text-white p-3 rounded-full transition-colors"
         >
           <ChevronRight className="w-6 h-6" />
         </button>
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
           {slides.map((_, idx) => (
             <button
               key={idx}
@@ -143,80 +107,77 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Welcome Section */}
+      {/* ── Welcome Section ── */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-[#2e7d32] mb-4">{t.welcome.title}</h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-10">{t.welcome.subtitle}</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#2e7d32] mb-3">{t.welcome.title}</h2>
+          <div className="w-16 h-1 bg-[#f57c00] mx-auto mb-6 rounded" />
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-12">{t.welcome.subtitle}</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
-              <div className="w-16 h-16 bg-[#2e7d32] rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-8 h-8 text-white" />
+            {[
+              { icon: <Users className="w-8 h-8 text-white" />, color: "#2e7d32", label: t.welcome.volunteer, desc: t.welcome.volunteerDesc },
+              { icon: <Gift className="w-8 h-8 text-white" />, color: "#f57c00", label: t.welcome.donate, desc: t.welcome.donateDesc },
+              { icon: <HeartHandshake className="w-8 h-8 text-white" />, color: "#2e7d32", label: t.welcome.collect, desc: t.welcome.collectDesc },
+            ].map((item, i) => (
+              <div key={i} className="bg-white p-8 rounded-lg shadow hover:shadow-lg transition-shadow text-center group">
+                <div
+                  className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform"
+                  style={{ backgroundColor: item.color }}
+                >
+                  {item.icon}
+                </div>
+                <h3 className="font-bold text-lg mb-2" style={{ color: item.color }}>{item.label}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
               </div>
-              <h3 className="font-bold text-lg text-[#2e7d32] mb-2">{t.welcome.volunteer}</h3>
-              <p className="text-gray-600">{t.welcome.volunteerDesc}</p>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
-              <div className="w-16 h-16 bg-[#f57c00] rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="font-bold text-lg text-[#f57c00] mb-2">{t.welcome.donate}</h3>
-              <p className="text-gray-600">{t.welcome.donateDesc}</p>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
-              <div className="w-16 h-16 bg-[#2e7d32] rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="font-bold text-lg text-[#2e7d32] mb-2">{t.welcome.collect}</h3>
-              <p className="text-gray-600">{t.welcome.collectDesc}</p>
-            </div>
+            ))}
           </div>
-          <div className="mt-8">
-            <Link href="/presentation" className="inline-block text-[#2e7d32] font-bold hover:underline">
+          <div className="mt-10">
+            <Link href="/presentation" className="inline-block bg-[#2e7d32] hover:bg-[#1b5e20] text-white font-bold px-8 py-3 rounded transition-colors">
               {t.welcome.learnMore}
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Help / Causes */}
+      {/* ── Causes / Fundraising ── */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-[#2e7d32] mb-10">{t.help.title}</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#2e7d32] mb-2">{t.help.title}</h2>
+          <div className="w-16 h-1 bg-[#f57c00] mx-auto mb-12 rounded" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {causes.map((cause) => {
               const key = cause.key as "cause1" | "cause2" | "cause3";
               return (
-                <div key={cause.key} className="bg-white border border-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                  <div className="relative h-48">
+                <div key={cause.key} className="bg-white border border-gray-100 rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
+                  <div className="relative h-52 overflow-hidden">
                     <img
                       src={cause.image}
                       alt=""
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=400&h=300&fit=crop";
                       }}
                     />
                   </div>
                   <div className="p-5">
-                    <Link href="/become-donor" className="text-[#2e7d32] font-bold hover:underline text-lg">
+                    <Link href="/become-donor" className="text-[#2e7d32] font-bold hover:text-[#f57c00] transition-colors text-lg block mb-2">
                       {t.help[`${key}Title` as keyof typeof t.help]}
                     </Link>
-                    <p className="text-gray-600 text-sm mt-2 line-clamp-3">
+                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
                       {t.help[`${key}Desc` as keyof typeof t.help]}
                     </p>
                     <div className="mt-4">
                       <div className="flex justify-between text-sm mb-1">
-                        <span className="text-[#2e7d32] font-bold">{cause.collected}</span>
-                        <span className="text-gray-500">{cause.percent}%</span>
+                        <span className="text-[#f57c00] font-bold">{cause.collected}</span>
+                        <span className="text-gray-500 font-semibold">{cause.percent}%</span>
                       </div>
-                      <div className="h-2 bg-gray-200 rounded-full">
+                      <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                         <div
                           className="h-2 bg-[#2e7d32] rounded-full transition-all"
                           style={{ width: `${cause.percent}%` }}
                         />
                       </div>
-                      <p className="text-gray-500 text-xs mt-1">{t.help.collected}</p>
+                      <p className="text-gray-400 text-xs mt-1">{t.help.collected}</p>
                     </div>
                   </div>
                 </div>
@@ -226,40 +187,46 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Foundation */}
+      {/* ── Foundation ── */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-[#2e7d32] mb-6">{t.foundation.title}</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">{t.foundation.desc1}</p>
-              <p className="text-gray-600 leading-relaxed">{t.foundation.desc2}</p>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[#2e7d32] mb-3">{t.foundation.title}</h2>
+              <div className="w-14 h-1 bg-[#f57c00] mb-6 rounded" />
+              <p className="text-gray-600 leading-relaxed mb-4 text-base">{t.foundation.desc1}</p>
+              <p className="text-gray-600 leading-relaxed text-base">{t.foundation.desc2}</p>
             </div>
             <div className="relative">
               <img
                 src="https://www.megaszolidaritas.org/images/cause-img.jpg"
                 alt="Foundation"
-                className="w-full rounded-lg shadow-lg"
+                className="w-full rounded-lg shadow-xl"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=400&fit=crop";
                 }}
               />
+              <div className="absolute -bottom-5 -left-5 bg-[#f57c00] text-white font-bold text-center py-4 px-6 rounded-lg shadow-lg hidden md:block">
+                <div className="text-3xl font-extrabold">150 000€</div>
+                <div className="text-sm">don max.</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Advantages */}
+      {/* ── Advantages ── */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-[#2e7d32] mb-4">{t.advantages.title}</h2>
-          <p className="text-gray-600 text-center max-w-3xl mx-auto mb-10">{t.advantages.desc}</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#2e7d32] mb-2">{t.advantages.title}</h2>
+          <div className="w-16 h-1 bg-[#f57c00] mx-auto mb-6 rounded" />
+          <p className="text-gray-600 text-center max-w-3xl mx-auto mb-12">{t.advantages.desc}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-            <div className="bg-gray-50 p-8 rounded-lg">
+            <div className="bg-gray-50 border-l-4 border-[#2e7d32] p-8 rounded-lg">
               <h3 className="font-bold text-xl text-[#2e7d32] mb-3">{t.advantages.beneficiaries}</h3>
               <p className="text-gray-600 leading-relaxed">{t.advantages.beneficiariesDesc}</p>
             </div>
-            <div className="bg-gray-50 p-8 rounded-lg">
+            <div className="bg-gray-50 border-l-4 border-[#f57c00] p-8 rounded-lg">
               <h3 className="font-bold text-xl text-[#f57c00] mb-3">{t.advantages.donors}</h3>
               <p className="text-gray-600 leading-relaxed">{t.advantages.donorsDesc}</p>
             </div>
@@ -267,57 +234,58 @@ export default function Home() {
           <div className="text-center">
             <a
               href="#"
-              className="inline-flex items-center gap-2 text-[#2e7d32] font-bold hover:underline"
+              className="inline-flex items-center gap-3 bg-gray-50 border border-gray-200 px-6 py-4 rounded-lg hover:shadow-md transition-shadow"
             >
-              <span className="text-2xl">📄</span>
+              <span className="text-3xl">📄</span>
               <div className="text-left">
-                <div>{t.advantages.downloadBrochure}</div>
-                <div className="text-sm font-normal text-gray-500">{t.advantages.downloadBtn}</div>
+                <div className="font-bold text-gray-800">{t.advantages.downloadBrochure}</div>
+                <div className="text-sm text-gray-500">{t.advantages.downloadBtn}</div>
               </div>
             </a>
           </div>
         </div>
       </section>
 
-      {/* How to Help */}
-      <section className="py-16 bg-[#2e7d32] text-white">
+      {/* ── How to Help ── */}
+      <section className="py-20 bg-[#2e7d32] text-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">{t.howHelp.title}</h2>
-          <p className="text-center text-green-100 max-w-2xl mx-auto mb-12">{t.howHelp.desc}</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-2">{t.howHelp.title}</h2>
+          <div className="w-16 h-1 bg-[#f57c00] mx-auto mb-6 rounded" />
+          <p className="text-center text-green-100 max-w-2xl mx-auto mb-14">{t.howHelp.desc}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               { num: "01", title: t.howHelp.step1Title, desc: t.howHelp.step1Desc },
               { num: "02", title: t.howHelp.step2Title, desc: t.howHelp.step2Desc },
               { num: "03", title: t.howHelp.step3Title, desc: t.howHelp.step3Desc },
             ].map((step) => (
               <div key={step.num} className="text-center">
-                <div className="w-16 h-16 border-4 border-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                <div className="w-20 h-20 border-4 border-[#f57c00] rounded-full flex items-center justify-center mx-auto mb-5 text-3xl font-extrabold text-[#f57c00]">
                   {step.num}
                 </div>
                 <h3 className="font-bold text-xl mb-3">{step.title}</h3>
-                <p className="text-green-100 leading-relaxed">{step.desc}</p>
+                <p className="text-green-100 leading-relaxed text-sm">{step.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ── CTA ── */}
       <section className="py-16 bg-gray-900 text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-4 text-[#f57c00]">{t.cta.title}</h2>
-          <h3 className="text-xl font-semibold mb-4 text-[#4caf50]">{t.welcome.volunteer}</h3>
-          <p className="text-gray-300 mb-8 leading-relaxed">{t.cta.subtitle}</p>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-[#f57c00]">{t.cta.title}</h2>
+          <h3 className="text-xl font-semibold mb-5 text-[#4caf50]">{t.welcome.volunteer}</h3>
+          <p className="text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto">{t.cta.subtitle}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/become-donor"
-              className="bg-[#f57c00] hover:bg-[#e65100] text-white font-bold px-8 py-3 rounded transition-colors"
+              className="bg-[#f57c00] hover:bg-[#e65100] text-white font-bold px-10 py-4 rounded transition-colors text-base"
             >
               {t.cta.becomeDonor}
             </Link>
             <Link
               href="/get-donation"
-              className="bg-[#2e7d32] hover:bg-[#1b5e20] text-white font-bold px-8 py-3 rounded transition-colors"
+              className="bg-[#2e7d32] hover:bg-[#1b5e20] text-white font-bold px-10 py-4 rounded transition-colors text-base"
             >
               {t.cta.getFreeGift}
             </Link>
@@ -325,26 +293,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-16 bg-white">
+      {/* ── Testimonials ── */}
+      <section className="py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-[#2e7d32] mb-2">{t.testimonials.title}</h2>
-          <p className="text-center text-gray-600 mb-10">{t.testimonials.subtitle}</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((t2, i) => (
-              <div key={i} className="flex gap-4 bg-gray-50 p-6 rounded-lg">
-                <img
-                  src={t2.image}
-                  alt={t2.name}
-                  className="w-20 h-20 rounded-full object-cover flex-shrink-0"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=80&h=80&fit=crop";
-                  }}
-                />
-                <div>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-3 italic">"{t2.text}"</p>
-                  <p className="font-bold text-[#2e7d32]">{t2.name}</p>
-                  <p className="text-gray-500 text-sm">{t2.nationality}</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#2e7d32] mb-2">{t.testimonials.title}</h2>
+          <div className="w-16 h-1 bg-[#f57c00] mx-auto mb-4 rounded" />
+          <p className="text-center text-gray-500 mb-12">{t.testimonials.subtitle}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {t.testimonials.list.map((item, i) => (
+              <div key={i} className="bg-white rounded-xl shadow-md p-6 flex flex-col gap-4 hover:shadow-lg transition-shadow">
+                {/* Stars */}
+                <div className="flex gap-0.5">
+                  {[...Array(5)].map((_, s) => (
+                    <Star key={s} className="w-4 h-4 fill-[#f57c00] text-[#f57c00]" />
+                  ))}
+                </div>
+                {/* Quote */}
+                <p className="text-gray-600 text-sm leading-relaxed italic">
+                  <span className="text-[#f57c00] font-bold text-2xl leading-none mr-1 not-italic">"</span>
+                  {item.text}
+                  <span className="text-[#f57c00] font-bold text-2xl leading-none ml-1 not-italic">"</span>
+                </p>
+                {/* Author */}
+                <div className="flex items-center gap-3 pt-2 border-t border-gray-100">
+                  <img
+                    src={testimonialImages[i % testimonialImages.length]}
+                    alt={item.name}
+                    className="w-12 h-12 rounded-full object-cover border-2 border-[#2e7d32] flex-shrink-0"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = fallbackImages[i % fallbackImages.length];
+                    }}
+                  />
+                  <div>
+                    <p className="font-bold text-gray-800 text-sm">{item.name}</p>
+                    <p className="text-[#2e7d32] text-xs font-semibold">{item.country}</p>
+                    <p className="text-gray-400 text-xs">{item.date}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -352,23 +336,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* VIP Donors */}
-      <section className="py-12 bg-gray-50">
+      {/* ── VIP Donors ── */}
+      <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center text-[#2e7d32] mb-8">{t.vipDonors.title}</h2>
-          <div className="flex flex-wrap justify-center gap-8">
+          <h2 className="text-2xl font-extrabold text-center text-[#2e7d32] mb-2">{t.vipDonors.title}</h2>
+          <div className="w-14 h-1 bg-[#f57c00] mx-auto mb-10 rounded" />
+          <div className="flex flex-wrap justify-center gap-10">
             {vipDonors.map((donor, i) => (
-              <div key={i} className="text-center">
+              <div key={i} className="text-center group">
                 <img
                   src={donor.image}
                   alt={donor.name}
-                  className="w-24 h-24 rounded-full object-cover mx-auto mb-2 border-4 border-[#2e7d32]"
+                  className="w-24 h-24 rounded-full object-cover mx-auto mb-3 border-4 border-[#2e7d32] group-hover:border-[#f57c00] transition-colors"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=96&h=96&fit=crop";
                   }}
                 />
                 <p className="font-bold text-gray-800 text-sm">{donor.name}</p>
-                <p className="text-gray-500 text-xs">{donor.nationality}</p>
+                <p className="text-gray-500 text-xs">{donor.country}</p>
               </div>
             ))}
           </div>

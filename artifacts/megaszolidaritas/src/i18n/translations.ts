@@ -73,6 +73,12 @@ export interface Translation {
   testimonials: {
     title: string;
     subtitle: string;
+    list: Array<{
+      name: string;
+      country: string;
+      date: string;
+      text: string;
+    }>;
   };
   vipDonors: {
     title: string;
@@ -181,7 +187,7 @@ export const translations: Record<Language, Translation> = {
       slide2Btn: "Csatlakozz hozzánk",
     },
     welcome: {
-      title: "Üdvözöljük SOLIDARIEDADE RODRIGUES",
+      title: "Üdvözöljük a SOLIDARIEDADE RODRIGUES-t",
       subtitle: "A jótékonysági szervezet, amely itt és máshol is egy igazságosabb és egységesebb világért dolgozik",
       volunteer: "Légy önkéntes",
       volunteerDesc: "Légy önkéntes, csatlakozz hozzánk!",
@@ -237,6 +243,12 @@ export const translations: Record<Language, Translation> = {
     testimonials: {
       title: "Beszélnek róla És Ön?",
       subtitle: "Sokan helyezik belénk a bizalmukat nap mint nap. Csatlakozzon hozzánk most!",
+      list: [
+        { name: "Nagy Péter", country: "Magyar", date: "Január 2025", text: "Elvesztettem a munkámat és nem tudtam fizetni a számláimat. A SOLIDARIEDADE RODRIGUES segítségével 45 000 eurós támogatást kaptam, ami lehetővé tette, hogy újra talpra álljak. Köszönöm, hogy nem hagytak magamra!" },
+        { name: "Kovács Mária", country: "Magyar", date: "Március 2024", text: "Súlyos betegséget diagnosztizáltak nálam, és a kezelések anyagilag tönkretettek. Ez az alapítvány 30 000 euróval segített, és ma már gyógyulóban vagyok. Igazi áldás ez a szervezet." },
+        { name: "Tóth János", country: "Magyar", date: "Október 2024", text: "Kis vállalkozásom csődbe ment 2023-ban. Az alapítvány révén 80 000 euró ingyenes adományt kaptam, amellyel el tudtam kezdeni mindent újból felépíteni. Nem hittem, hogy ilyen segítség létezik." },
+        { name: "Szabó Éva", country: "Magyar", date: "Február 2025", text: "Árvíz pusztította el otthonomat. Mielőtt még reményvesztett lettem volna, a SOLIDARIEDADE RODRIGUES-hez fordultam, és 25 000 eurót kaptam az újjáépítésre. Hálás vagyok minden napért." },
+      ],
     },
     vipDonors: {
       title: "Adományozóink VIP",
@@ -247,7 +259,7 @@ export const translations: Record<Language, Translation> = {
     },
     about: {
       title: "Kik vagyunk?",
-      whoWeAre: "Üdvözöljük SOLIDARIEDADE RODRIGUES",
+      whoWeAre: "Üdvözöljük a SOLIDARIEDADE RODRIGUES-t",
       desc1: "Az emberektől kiindulva, általuk vezérelve, a SOLIDARIEDADE RODRIGUES egy valóban egyedülálló, egyenlő felek közötti kapcsolatot és feltétel nélküli befogadást hirdet. Partneri hálózatával mindenhol jelen van, az utca végén és a földkerekség végén egyaránt.",
       desc2: "Az egyesület mélyen decentralizált, így mindenki cselekedhet: sürgősségi akciók, hosszú távú akciók, átfogó támogatás anyagi, táplálkozási, orvosi, erkölcsi, jogi, képzési, társadalmi és szakmai integrációs területeken.",
       projects: "Befejezett projektek",
@@ -343,7 +355,7 @@ export const translations: Record<Language, Translation> = {
       slide2Btn: "Rejoignez-nous",
     },
     welcome: {
-      title: "Bienvenue SOLIDARIEDADE RODRIGUES",
+      title: "Bienvenue à SOLIDARIEDADE RODRIGUES",
       subtitle: "L'association caritative qui œuvre ici et ailleurs pour un monde plus juste et plus uni",
       volunteer: "Soyez bénévole",
       volunteerDesc: "Soyez bénévole, rejoignez-nous !",
@@ -399,6 +411,12 @@ export const translations: Record<Language, Translation> = {
     testimonials: {
       title: "Ils en parlent Et vous ?",
       subtitle: "Beaucoup nous font confiance chaque jour. Rejoignez-nous maintenant !",
+      list: [
+        { name: "Marie Dupont", country: "Française", date: "Février 2025", text: "J'avais perdu mon emploi et je n'arrivais plus à payer mon loyer. Grâce à SOLIDARIEDADE RODRIGUES, j'ai reçu un don de 45 000 € qui m'a permis de repartir sur de bonnes bases. Je recommande cette fondation à toute personne dans le besoin." },
+        { name: "Jean-Pierre Moreau", country: "Français", date: "Septembre 2024", text: "Suite à un licenciement brutal, je me suis retrouvé dans une situation désespérée. Cette fondation m'a accordé un soutien de 60 000 € sans contrepartie. Aujourd'hui j'ai pu reprendre une formation et relancer ma carrière." },
+        { name: "Sophie Leclerc", country: "Belge", date: "Novembre 2024", text: "On m'a diagnostiqué un cancer en 2024. Les soins et les frais annexes m'avaient plongée dans de grandes difficultés financières. La fondation m'a apporté une aide de 35 000 € qui a tout changé. Merci du fond du cœur." },
+        { name: "Carlos Mendes", country: "Franco-Portugais", date: "Janvier 2025", text: "Un grave accident de la route m'a laissé incapable de travailler pendant plus d'un an. SOLIDARIEDADE RODRIGUES m'a soutenu avec 50 000 € pour couvrir mes frais de rééducation. Une aide précieuse et totalement gratuite." },
+      ],
     },
     vipDonors: {
       title: "Nos donateurs VIP",
@@ -409,7 +427,7 @@ export const translations: Record<Language, Translation> = {
     },
     about: {
       title: "Qui sommes-nous ?",
-      whoWeAre: "Bienvenue SOLIDARIEDADE RODRIGUES",
+      whoWeAre: "Bienvenue à SOLIDARIEDADE RODRIGUES",
       desc1: "Partant des personnes, guidé par elles, SOLIDARIEDADE RODRIGUES prône une relation vraiment unique, égale et une inclusion inconditionnelle. Avec son réseau de partenaires, il est présent partout, au bout de la rue comme au bout du monde.",
       desc2: "L'association est profondément décentralisée, permettant à chacun d'agir : actions d'urgence, actions à long terme, soutien global sur les plans matériel, nutritionnel, médical, moral, juridique, formation, intégration sociale et professionnelle.",
       projects: "Projets réalisés",
@@ -561,6 +579,12 @@ export const translations: Record<Language, Translation> = {
     testimonials: {
       title: "They Talk About It And You?",
       subtitle: "Many trust us every day. Join us now!",
+      list: [
+        { name: "James Harrison", country: "British", date: "March 2025", text: "After my business collapsed in 2024, I was completely lost. SOLIDARIEDADE RODRIGUES provided me with a free grant of €70,000 that allowed me to start fresh. I am eternally grateful to this incredible foundation." },
+        { name: "Sarah O'Brien", country: "Irish", date: "August 2024", text: "I was diagnosed with a serious illness and the medical bills were overwhelming. This foundation stepped in with €40,000 and truly saved my life. I had never believed such generosity existed until I experienced it firsthand." },
+        { name: "Michael Chen", country: "Canadian", date: "October 2024", text: "A fire destroyed my home and everything I owned. Within a few weeks of applying, SOLIDARIEDADE RODRIGUES provided €50,000 to help me rebuild. The process was transparent and the team was incredibly supportive throughout." },
+        { name: "Emma Wilson", country: "Australian", date: "January 2025", text: "I lost my job unexpectedly and found myself in a very difficult situation. Thanks to SOLIDARIEDADE RODRIGUES, I received €35,000 which gave me the breathing room I needed to get back on my feet. Truly life-changing." },
+      ],
     },
     vipDonors: {
       title: "Our VIP Donors",
@@ -723,6 +747,12 @@ export const translations: Record<Language, Translation> = {
     testimonials: {
       title: "Ne parlano E voi?",
       subtitle: "Molti ci fidano ogni giorno. Unisciti a noi ora!",
+      list: [
+        { name: "Marco Rossi", country: "Italiano", date: "Febbraio 2025", text: "Ho perso il lavoro e non riuscivo più a mantenere la mia famiglia. Grazie a SOLIDARIEDADE RODRIGUES ho ricevuto una donazione gratuita di 55.000 €. Oggi ho riaperto la mia piccola attività e sono tornato ad essere indipendente." },
+        { name: "Laura Ferrari", country: "Italiana", date: "Luglio 2024", text: "Una grave malattia mi ha messa in ginocchio finanziariamente. Questa fondazione mi ha aiutata con 30.000 € senza chiedere nulla in cambio. Non smetto di ringraziarli, hanno cambiato la mia vita in un momento di totale disperazione." },
+        { name: "Giuseppe Marino", country: "Italiano", date: "Novembre 2024", text: "La mia azienda era sull'orlo del fallimento. Ho contattato SOLIDARIEDADE RODRIGUES e in poche settimane ho ricevuto 80.000 € che mi hanno permesso di salvare l'impresa e mantenere i miei dipendenti. Fondazione straordinaria." },
+        { name: "Elena Ricci", country: "Italiana", date: "Marzo 2025", text: "Un incendio ha distrutto la mia casa. In un momento di totale sconforto, questa fondazione mi ha teso la mano con 40.000 €. Grazie a loro ho potuto ricominciare e sono ora in un appartamento confortevole." },
+      ],
     },
     vipDonors: {
       title: "I nostri donatori VIP",
@@ -885,6 +915,12 @@ export const translations: Record<Language, Translation> = {
     testimonials: {
       title: "Sie sprechen darüber Und Sie?",
       subtitle: "Viele vertrauen uns täglich. Tritt uns jetzt bei!",
+      list: [
+        { name: "Klaus Müller", country: "Deutsch", date: "Februar 2025", text: "Nach einem unerwarteten Jobverlust wusste ich nicht mehr weiter. SOLIDARIEDADE RODRIGUES hat mir eine kostenlose Förderung von 60.000 € gewährt. Ich konnte meine Schulden begleichen und einen Neuanfang wagen. Herzlichen Dank!" },
+        { name: "Anna Becker", country: "Österreicherin", date: "September 2024", text: "Eine schwere Erkrankung hatte mich finanziell ruiniert. Diese Stiftung half mir mit 35.000 € ohne jede Gegenleistung. Dank dieser Unterstützung konnte ich mich vollständig auf meine Genesung konzentrieren." },
+        { name: "Thomas Weber", country: "Schweizer", date: "Oktober 2024", text: "Mein Unternehmen stand vor dem Konkurs. Ich wandte mich an SOLIDARIEDADE RODRIGUES und erhielt innerhalb weniger Wochen 90.000 € Unterstützung. Damit konnte ich meinen Betrieb retten und meine Mitarbeiter halten." },
+        { name: "Maria Schäfer", country: "Deutsch", date: "Januar 2025", text: "Eine Überschwemmung zerstörte unser Haus. Durch die Hilfe dieser Stiftung erhielten wir 50.000 € für den Wiederaufbau. Ich hätte nie gedacht, dass es so großzügige Unterstützung gibt. Eine echte Lebensrettung." },
+      ],
     },
     vipDonors: {
       title: "Unsere VIP-Spender",
@@ -1047,6 +1083,12 @@ export const translations: Record<Language, Translation> = {
     testimonials: {
       title: "Hablan de ello ¿Y usted?",
       subtitle: "Muchos confían en nosotros cada día. ¡Únase a nosotros ahora!",
+      list: [
+        { name: "Carlos García", country: "Español", date: "Enero 2025", text: "Después de perder mi trabajo, estaba completamente desesperado. SOLIDARIEDADE RODRIGUES me proporcionó una donación gratuita de 55.000 € que me permitió saldar mis deudas y empezar de nuevo. Una fundación verdaderamente excepcional." },
+        { name: "María González", country: "Española", date: "Agosto 2024", text: "Me diagnosticaron una enfermedad grave y los gastos médicos me arruinaron. Esta fundación me ayudó con 40.000 € sin pedir nada a cambio. Gracias a su apoyo pude concentrarme en recuperarme y hoy estoy mucho mejor." },
+        { name: "Roberto Martínez", country: "Argentino", date: "Octubre 2024", text: "Mi empresa estaba al borde de la quiebra. Me puse en contacto con SOLIDARIEDADE RODRIGUES y en pocas semanas recibí 70.000 €. Eso me permitió salvar el negocio y mantener a mis empleados. Una ayuda increíble e inesperada." },
+        { name: "Ana López", country: "Mexicana", date: "Febrero 2025", text: "Un desastre natural destruyó mi hogar. En mi momento de mayor necesidad, esta fundación me extendió la mano con 35.000 € para reconstruir mi vida. Nunca olvidaré su generosidad y apoyo incondicional." },
+      ],
     },
     vipDonors: {
       title: "Nuestros donantes VIP",
@@ -1209,6 +1251,12 @@ export const translations: Record<Language, Translation> = {
     testimonials: {
       title: "Eles falam sobre isso E você?",
       subtitle: "Muitos confiam em nós cada dia. Junte-se a nós agora!",
+      list: [
+        { name: "João Silva", country: "Português", date: "Janeiro 2025", text: "Depois de perder o emprego, estava numa situação financeira desesperante. A SOLIDARIEDADE RODRIGUES concedeu-me uma ajuda gratuita de 50.000 €, o que me permitiu saldar as dívidas e recomeçar. Sou eternamente grato." },
+        { name: "Ana Ferreira", country: "Portuguesa", date: "Julho 2024", text: "Fui diagnosticada com uma doença grave e as despesas médicas eram esmagadoras. Esta fundação ajudou-me com 35.000 € sem pedir nada em troca. Graças a eles, pude concentrar-me na recuperação e hoje estou muito melhor." },
+        { name: "Ricardo Santos", country: "Brasileiro", date: "Novembro 2024", text: "O meu negócio estava à beira da falência. Contactei a SOLIDARIEDADE RODRIGUES e, em poucas semanas, recebi 80.000 €. Isso permitiu-me salvar a empresa e manter os meus funcionários. Uma ajuda verdadeiramente extraordinária." },
+        { name: "Isabel Costa", country: "Portuguesa", date: "Março 2025", text: "Um acidente de viação deixou-me incapaz de trabalhar durante mais de um ano. A fundação apoiou-me com 45.000 € para cobrir as despesas de reabilitação. Uma ajuda preciosa e completamente gratuita. Muito obrigada." },
+      ],
     },
     vipDonors: {
       title: "Nossos doadores VIP",
@@ -1371,6 +1419,12 @@ export const translations: Record<Language, Translation> = {
     testimonials: {
       title: "Ze praten erover En u?",
       subtitle: "Velen vertrouwen ons elke dag. Doe nu mee!",
+      list: [
+        { name: "Jan de Vries", country: "Nederlands", date: "Februari 2025", text: "Na het verlies van mijn baan wist ik niet meer hoe ik mijn rekeningen moest betalen. SOLIDARIEDADE RODRIGUES verleende mij een gratis donatie van €55.000, waarmee ik mijn schulden kon aflossen en opnieuw kon beginnen. Fantastische organisatie." },
+        { name: "Emma van den Berg", country: "Nederlands", date: "September 2024", text: "Ik werd gediagnosticeerd met een ernstige ziekte en de medische kosten waren overweldigend. Deze stichting hielp mij met €38.000 zonder iets terug te vragen. Dankzij hun steun kon ik me volledig op mijn herstel richten." },
+        { name: "Pieter Janssen", country: "Belg", date: "November 2024", text: "Mijn bedrijf stond op de rand van faillissement. Ik nam contact op met SOLIDARIEDADE RODRIGUES en ontving binnen enkele weken €75.000 steun. Daarmee kon ik mijn onderneming redden en mijn medewerkers in dienst houden." },
+        { name: "Lisa van der Berg", country: "Nederlands", date: "Januari 2025", text: "Een overstroming verwoestte mijn huis. Via deze stichting ontving ik €40.000 voor de wederopbouw. Ik had nooit gedacht dat zulke vrijgevige steun bestond. Een echte redding op het moeilijkste moment van mijn leven." },
+      ],
     },
     vipDonors: {
       title: "Onze VIP-donateurs",
@@ -1533,6 +1587,12 @@ export const translations: Record<Language, Translation> = {
     testimonials: {
       title: "Vorbesc despre asta Și tu?",
       subtitle: "Mulți ne acordă încredere în fiecare zi. Alăturați-vă nouă acum!",
+      list: [
+        { name: "Ion Popescu", country: "Român", date: "Ianuarie 2025", text: "După ce mi-am pierdut locul de muncă, nu știam cum să-mi plătesc facturile. SOLIDARIEDADE RODRIGUES mi-a acordat o donație gratuită de 50.000 €, care mi-a permis să îmi achit datoriile și să o iau de la capăt. Vă mulțumesc din suflet!" },
+        { name: "Maria Ionescu", country: "Română", date: "August 2024", text: "Mi s-a diagnosticat o boală gravă și cheltuielile medicale mă copleșeau. Această fundație m-a ajutat cu 35.000 € fără să ceară nimic în schimb. Datorită sprijinului lor, am putut să mă concentrez pe recuperare și astăzi sunt mult mai bine." },
+        { name: "Alexandru Constantin", country: "Român", date: "Octombrie 2024", text: "Afacerea mea era pe marginea falimentului. Am contactat SOLIDARIEDADE RODRIGUES și în câteva săptămâni am primit 70.000 €. Asta m-a ajutat să salvez firma și să îmi păstrez angajații. O ajutor incredibil și neașteptat." },
+        { name: "Elena Mihai", country: "Română", date: "Martie 2025", text: "Un accident de mașină m-a lăsat incapabilă să lucrez mai mult de un an. Fundația m-a sprijinit cu 40.000 € pentru a acoperi cheltuielile de reabilitare. O ajutor prețios și complet gratuit. Vă mulțumesc cu toată inima." },
+      ],
     },
     vipDonors: {
       title: "Donatorii noștri VIP",
@@ -1695,6 +1755,12 @@ export const translations: Record<Language, Translation> = {
     testimonials: {
       title: "Mówią o tym A ty?",
       subtitle: "Wielu ufa nam każdego dnia. Dołącz do nas teraz!",
+      list: [
+        { name: "Marek Kowalski", country: "Polak", date: "Luty 2025", text: "Po utracie pracy nie wiedziałem jak płacić rachunki. SOLIDARIEDADE RODRIGUES przyznała mi bezpłatną darowiznę w wysokości 55 000 €, dzięki której spłaciłem długi i zacząłem od nowa. Niesamowita organizacja, dziękuję z całego serca!" },
+        { name: "Anna Nowak", country: "Polka", date: "Wrzesień 2024", text: "Zdiagnozowano u mnie poważną chorobę, a koszty leczenia były przytłaczające. Ta fundacja pomogła mi kwotą 38 000 € bez żadnych warunków. Dzięki ich wsparciu mogłam skupić się na rekonwalescencji i dziś czuję się dużo lepiej." },
+        { name: "Piotr Wiśniewski", country: "Polak", date: "Listopad 2024", text: "Moja firma była na skraju upadłości. Skontaktowałem się z SOLIDARIEDADE RODRIGUES i w ciągu kilku tygodni otrzymałem 75 000 € wsparcia. Dzięki temu uratowałem firmę i zachowałem pracowników. Pomoc naprawdę nieoceniona." },
+        { name: "Katarzyna Wójcik", country: "Polka", date: "Styczeń 2025", text: "Powódź zniszczyła mój dom. Przez tę fundację otrzymałam 40 000 € na odbudowę. Nigdy nie myślałam, że istnieje tak hojna pomoc. Prawdziwy ratunek w najtrudniejszym momencie mojego życia." },
+      ],
     },
     vipDonors: {
       title: "Nasi darczyńcy VIP",
