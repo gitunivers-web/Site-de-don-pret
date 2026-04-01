@@ -65,6 +65,12 @@
   }
 }
 
+/* Prevent select dropdowns from overflowing on mobile */
+select {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 .line-clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
