@@ -8,6 +8,7 @@ import About from "@/pages/About";
 import GetDonation from "@/pages/GetDonation";
 import BecomeDonor from "@/pages/BecomeDonor";
 import Contact from "@/pages/Contact";
+import Testimonials from "@/pages/Testimonials";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ function Router() {
           <Route path="/presentation" component={About} />
           <Route path="/get-donation" component={GetDonation} />
           <Route path="/become-donor" component={BecomeDonor} />
+          <Route path="/testimonials" component={Testimonials} />
           <Route path="/contact" component={Contact} />
           <Route>
             <div className="flex items-center justify-center min-h-[60vh]">

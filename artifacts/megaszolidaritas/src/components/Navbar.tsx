@@ -17,6 +17,7 @@ export default function Navbar() {
     { label: t.nav.about, href: "/presentation" },
     { label: t.nav.getDonation, href: "/get-donation" },
     { label: t.nav.becomeDonor, href: "/become-donor" },
+    { label: t.nav.testimonials, href: "/testimonials" },
     { label: t.nav.contact, href: "/contact" },
   ];
 

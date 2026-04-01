@@ -231,18 +231,6 @@ export default function Home() {
               <p className="text-gray-600 leading-relaxed">{t.advantages.donorsDesc}</p>
             </div>
           </div>
-          <div className="text-center">
-            <a
-              href="#"
-              className="inline-flex items-center gap-3 bg-gray-50 border border-gray-200 px-6 py-4 rounded-lg hover:shadow-md transition-shadow"
-            >
-              <span className="text-3xl">📄</span>
-              <div className="text-left">
-                <div className="font-bold text-gray-800">{t.advantages.downloadBrochure}</div>
-                <div className="text-sm text-gray-500">{t.advantages.downloadBtn}</div>
-              </div>
-            </a>
-          </div>
         </div>
       </section>
 

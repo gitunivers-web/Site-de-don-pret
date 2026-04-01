@@ -6,6 +6,7 @@ export interface Translation {
     about: string;
     getDonation: string;
     becomeDonor: string;
+    testimonials: string;
     contact: string;
   };
   hero: {
@@ -176,6 +177,7 @@ export const translations: Record<Language, Translation> = {
       about: "Bemutatkozás",
       getDonation: "Adományt kap",
       becomeDonor: "Adományozó lesz",
+      testimonials: "Vélemények",
       contact: "Kapcsolat",
     },
     hero: {
@@ -250,6 +252,20 @@ export const translations: Record<Language, Translation> = {
         { name: "Szabó Éva", country: "Magyar", date: "Február 2025", text: "Árvíz pusztította el otthonomat. Mielőtt még reményvesztett lettem volna, a SOLIDARIEDADE RODRIGUES-hez fordultam, és 25 000 eurót kaptam az újjáépítésre. Hálás vagyok minden napért." },
       ],
     },
+    testimonialsPage: {
+        pageTitle: "Vélemények",
+        pageSubtitle: "Ők megbíztak bennünk – olvassa el történeteiket.",
+        texts: [
+          "A gazdasági válság alatt elvesztettem a munkámat és nem tudtam tovább fizetni a jelzálogomat. A SOLIDARIEDADE RODRIGUES segítségével 42 000 eurót kaptam, ami lehetővé tette, hogy stabilizáljam a pénzügyi helyzetem és újrakezdjek. Örökre hálás vagyok.",
+          "Súlyos közlekedési baleset után több mint egy évig nem tudtam dolgozni. Az orvosi számlák és a bevételkiesés kétségbeejtő helyzetbe hozta a családomat. Ez az alapítvány 67 500 eurót adott nekünk, ami szó szerint megmentett minket.",
+          "Kis pékségem tűzben pusztult el, megsemmisítve mindent, amit 10 év alatt felépítettem. Feladtam a reményt, amikor megtaláltam a SOLIDARIEDADE RODRIGUES-t. A 28 000 eurós adomány lehetővé tette, hogy újra kinyissak.",
+          "Feleségemnél súlyos betegséget diagnosztizáltak, és a kezelési költségek elképesztők voltak. Kanadai bevándorló családként nem volt biztonsági hálónk. A kapott 90 000 euró lehetővé tette a gyógyulását. Soha nem felejtjük el ezt.",
+          "Egy súlyos árvíz elpusztította otthonunkat. Mindenünk nélkül maradtunk. A SOLIDARIEDADE RODRIGUES gyorsan reagált, és a 35 000 eurós adomány segített nekünk újjáépíteni. Ez a szervezet valóban megváltoztatja az életeket.",
+          "Vállalkozásom csődbe ment, miután egy nagy ügyfél nem fizetett. 52 évesen azt hittem, hogy szakmai életem véget ért. Az 55 000 eurós adomány megadta nekem az eszközöket egy új vállalkozás indításához. Most stabilizálódom.",
+          "Három gyermek egyedülálló anyjaként a munkahelyem elvesztése rettegésben hagyott minket. A kapott 78 000 euró csoda volt. Gyermekeim folytathatják tanulmányaikat, és én újra munkát találtam.",
+          "Jobb életet keresve emigráltam a családommal, de váratlan nehézségekkel szembesültem. A kapott 120 000 euró megváltoztatta az életünket. Mostanra stabil lakásunk van, gyermekeim iskolába járnak és ismét dolgozom.",
+        ] as const,
+      },
     vipDonors: {
       title: "Adományozóink VIP",
     },
@@ -344,6 +360,7 @@ export const translations: Record<Language, Translation> = {
       about: "Présentation",
       getDonation: "Obtenir un don",
       becomeDonor: "Devenir donateur",
+      testimonials: "Témoignages",
       contact: "Contact",
     },
     hero: {
@@ -418,6 +435,20 @@ export const translations: Record<Language, Translation> = {
         { name: "Carlos Mendes", country: "Franco-Portugais", date: "Janvier 2025", text: "Un grave accident de la route m'a laissé incapable de travailler pendant plus d'un an. SOLIDARIEDADE RODRIGUES m'a soutenu avec 50 000 € pour couvrir mes frais de rééducation. Une aide précieuse et totalement gratuite." },
       ],
     },
+    testimonialsPage: {
+        pageTitle: "Témoignages",
+        pageSubtitle: "Ils nous ont fait confiance. Découvrez leurs histoires.",
+        texts: [
+          "J'ai perdu mon emploi lors de la crise économique et je ne pouvais plus rembourser mon hypothèque. Grâce à SOLIDARIEDADE RODRIGUES, j'ai reçu 42 000 € qui m'ont permis de stabiliser ma situation et de repartir de zéro. Je suis éternellement reconnaissante.",
+          "Après un grave accident de voiture, je n'ai pas pu travailler pendant plus d'un an. Les factures médicales et la perte de revenus ont mis ma famille dans une situation désespérée. Cette fondation nous a accordé 67 500 € qui nous ont littéralement sauvés.",
+          "Ma petite boulangerie a été détruite dans un incendie, détruisant tout ce que j'avais construit en 10 ans. J'avais perdu espoir quand j'ai trouvé SOLIDARIEDADE RODRIGUES. Le don de 28 000 € m'a permis de rouvrir et aujourd'hui mon commerce est à nouveau florissant.",
+          "Ma femme a été diagnostiquée avec une maladie grave et les coûts du traitement étaient exorbitants. En tant que famille immigrante au Canada, nous n'avions aucun filet de sécurité. Les 90 000 € reçus ont rendu sa guérison possible. Nous n'oublierons jamais.",
+          "Une inondation sévère a détruit notre maison. Nous nous sommes retrouvés sans rien. SOLIDARIEDADE RODRIGUES a répondu rapidement et le don de 35 000 € nous a aidés à reconstruire. Cette organisation change vraiment des vies.",
+          "Mon entreprise a fait faillite après qu'un client majeur a fait défaut. À 52 ans, je pensais que ma vie professionnelle était terminée. Le don de 55 000 € m'a donné les moyens de créer une nouvelle entreprise. Je me stabilise maintenant.",
+          "En tant que mère célibataire de trois enfants, la perte de mon emploi nous a laissés dans une situation terrifiante. Les 78 000 € reçus ont été un miracle. Mes enfants peuvent poursuivre leurs études et j'ai relancé ma carrière.",
+          "J'ai émigré avec ma famille pour construire une vie meilleure mais j'ai fait face à des difficultés imprévues. Les 120 000 € reçus ont changé notre vie. Nous avons maintenant un logement stable, mes enfants sont à l'école et je travaille à nouveau.",
+        ] as const,
+      },
     vipDonors: {
       title: "Nos donateurs VIP",
     },
@@ -512,6 +543,7 @@ export const translations: Record<Language, Translation> = {
       about: "About",
       getDonation: "Get Donation",
       becomeDonor: "Become a Donor",
+      testimonials: "Testimonials",
       contact: "Contact",
     },
     hero: {
@@ -586,6 +618,20 @@ export const translations: Record<Language, Translation> = {
         { name: "Emma Wilson", country: "Australian", date: "January 2025", text: "I lost my job unexpectedly and found myself in a very difficult situation. Thanks to SOLIDARIEDADE RODRIGUES, I received €35,000 which gave me the breathing room I needed to get back on my feet. Truly life-changing." },
       ],
     },
+    testimonialsPage: {
+        pageTitle: "Testimonials",
+        pageSubtitle: "They trusted us. Read their stories.",
+        texts: [
+          "I lost my job during the economic crisis and could no longer pay my mortgage. Thanks to SOLIDARIEDADE RODRIGUES, I received €42,000 which allowed me to stabilize my situation and start fresh. I am forever grateful.",
+          "After a serious car accident, I was unable to work for over a year. Medical bills and loss of income put my family in a desperate situation. This foundation gave us €67,500 which literally saved us. Words cannot express my gratitude.",
+          "My small bakery burned down in a fire, destroying everything I had built over 10 years. I had given up hope when I found SOLIDARIEDADE RODRIGUES. The €28,000 donation allowed me to reopen and today my business is flourishing again.",
+          "My wife was diagnosed with a serious illness and the treatment costs were staggering. As an immigrant family in Canada, we had no safety net. The €90,000 we received made her recovery possible. We will never forget this generosity.",
+          "A severe flood destroyed our home. We were left with nothing. SOLIDARIEDADE RODRIGUES responded quickly and the €35,000 donation helped us rebuild. This organization truly changes lives.",
+          "My company went bankrupt after a major client defaulted. At 52, I thought my professional life was over. The €55,000 donation gave me the means to start a new business. I am now recovering and feeling hopeful again.",
+          "As a single mother of three, losing my job left us in a terrifying situation. The €78,000 I received was a miracle. My children can continue their education and I have restarted my career. Thank you endlessly.",
+          "I emigrated with my family to build a better life but faced unforeseen hardships. The €120,000 we received was life-changing. We now have stable housing, my children are in school, and I am working again. Thank you for believing in us.",
+        ] as const,
+      },
     vipDonors: {
       title: "Our VIP Donors",
     },
@@ -680,6 +726,7 @@ export const translations: Record<Language, Translation> = {
       about: "Presentazione",
       getDonation: "Ricevi una donazione",
       becomeDonor: "Diventa donatore",
+      testimonials: "Testimonianze",
       contact: "Contatto",
     },
     hero: {
@@ -754,6 +801,20 @@ export const translations: Record<Language, Translation> = {
         { name: "Elena Ricci", country: "Italiana", date: "Marzo 2025", text: "Un incendio ha distrutto la mia casa. In un momento di totale sconforto, questa fondazione mi ha teso la mano con 40.000 €. Grazie a loro ho potuto ricominciare e sono ora in un appartamento confortevole." },
       ],
     },
+    testimonialsPage: {
+        pageTitle: "Testimonianze",
+        pageSubtitle: "Si sono fidati di noi. Scopri le loro storie.",
+        texts: [
+          "Ho perso il lavoro durante la crisi economica e non riuscivo più a pagare il mutuo. Grazie a SOLIDARIEDADE RODRIGUES ho ricevuto 42.000 € che mi hanno permesso di stabilizzare la mia situazione e ricominciare. Sono eternamente grata.",
+          "Dopo un grave incidente stradale, non ho potuto lavorare per oltre un anno. Le spese mediche e la perdita di reddito hanno messo la mia famiglia in una situazione disperata. Questa fondazione ci ha dato 67.500 € che ci hanno salvato letteralmente.",
+          "Il mio piccolo panificio è bruciato in un incendio, distruggendo tutto ciò che avevo costruito in 10 anni. Avevo perso la speranza quando ho trovato SOLIDARIEDADE RODRIGUES. La donazione di 28.000 € mi ha permesso di riaprire.",
+          "A mia moglie è stata diagnosticata una malattia grave e i costi del trattamento erano enormi. Come famiglia immigrata in Canada, non avevamo reti di sicurezza. I 90.000 € ricevuti hanno reso possibile la sua guarigione.",
+          "Una grave inondazione ha distrutto la nostra casa. Ci siamo ritrovati senza nulla. SOLIDARIEDADE RODRIGUES ha risposto rapidamente e la donazione di 35.000 € ci ha aiutato a ricostruire. Questa organizzazione cambia davvero le vite.",
+          "La mia azienda è fallita dopo che un grande cliente non ha pagato. A 52 anni pensavo che la mia vita professionale fosse finita. La donazione di 55.000 € mi ha dato i mezzi per avviare una nuova attività.",
+          "Come madre single di tre figli, la perdita del lavoro ci ha lasciato in una situazione terrificante. I 78.000 € ricevuti sono stati un miracolo. I miei figli possono continuare gli studi e ho ripreso la mia carriera.",
+          "Sono emigrato con la mia famiglia per costruire una vita migliore ma ho affrontato difficoltà impreviste. I 120.000 € ricevuti hanno cambiato la nostra vita. Abbiamo ora un alloggio stabile, i miei figli sono a scuola e lavoro di nuovo.",
+        ] as const,
+      },
     vipDonors: {
       title: "I nostri donatori VIP",
     },
@@ -848,6 +909,7 @@ export const translations: Record<Language, Translation> = {
       about: "Über uns",
       getDonation: "Spende erhalten",
       becomeDonor: "Spender werden",
+      testimonials: "Erfahrungsberichte",
       contact: "Kontakt",
     },
     hero: {
@@ -922,6 +984,20 @@ export const translations: Record<Language, Translation> = {
         { name: "Maria Schäfer", country: "Deutsch", date: "Januar 2025", text: "Eine Überschwemmung zerstörte unser Haus. Durch die Hilfe dieser Stiftung erhielten wir 50.000 € für den Wiederaufbau. Ich hätte nie gedacht, dass es so großzügige Unterstützung gibt. Eine echte Lebensrettung." },
       ],
     },
+    testimonialsPage: {
+        pageTitle: "Erfahrungsberichte",
+        pageSubtitle: "Sie haben uns vertraut. Lesen Sie ihre Geschichten.",
+        texts: [
+          "Ich verlor meinen Job während der Wirtschaftskrise und konnte meine Hypothek nicht mehr bezahlen. Dank SOLIDARIEDADE RODRIGUES erhielt ich 42.000 €, was mir ermöglichte, meine Situation zu stabilisieren und neu anzufangen. Ich bin ewig dankbar.",
+          "Nach einem schweren Autounfall konnte ich über ein Jahr lang nicht arbeiten. Arztrechnungen und Einkommensverlust brachten meine Familie in eine verzweifelte Lage. Diese Stiftung gab uns 67.500 €, die uns buchstäblich gerettet haben.",
+          "Meine kleine Bäckerei brannte in einem Feuer nieder und zerstörte alles, was ich in 10 Jahren aufgebaut hatte. Ich hatte die Hoffnung aufgegeben, als ich SOLIDARIEDADE RODRIGUES fand. Die Spende von 28.000 € ermöglichte mir die Wiedereröffnung.",
+          "Bei meiner Frau wurde eine schwere Krankheit diagnostiziert und die Behandlungskosten waren enorm. Als Einwandererfamilie in Kanada hatten wir kein Sicherheitsnetz. Die erhaltenen 90.000 € ermöglichten ihre Genesung.",
+          "Eine schwere Überschwemmung zerstörte unser Haus. Wir standen ohne nichts da. SOLIDARIEDADE RODRIGUES reagierte schnell und die Spende von 35.000 € half uns beim Wiederaufbau. Diese Organisation verändert wirklich Leben.",
+          "Mein Unternehmen ging bankrott, nachdem ein großer Kunde nicht zahlte. Mit 52 Jahren dachte ich, mein Berufsleben sei vorbei. Die Spende von 55.000 € gab mir die Mittel, ein neues Unternehmen zu gründen.",
+          "Als alleinerziehende Mutter von drei Kindern ließ mich der Jobverlust in einer erschreckenden Situation zurück. Die erhaltenen 78.000 € waren ein Wunder. Meine Kinder können ihre Ausbildung fortsetzen und ich habe meine Karriere neu gestartet.",
+          "Ich emigrierte mit meiner Familie, um ein besseres Leben aufzubauen, sah mich jedoch mit unvorhergesehenen Schwierigkeiten konfrontiert. Die erhaltenen 120.000 € veränderten unser Leben. Wir haben jetzt eine stabile Unterkunft.",
+        ] as const,
+      },
     vipDonors: {
       title: "Unsere VIP-Spender",
     },
@@ -1016,6 +1092,7 @@ export const translations: Record<Language, Translation> = {
       about: "Presentación",
       getDonation: "Obtener donación",
       becomeDonor: "Convertirse en donante",
+      testimonials: "Testimonios",
       contact: "Contacto",
     },
     hero: {
@@ -1090,6 +1167,20 @@ export const translations: Record<Language, Translation> = {
         { name: "Ana López", country: "Mexicana", date: "Febrero 2025", text: "Un desastre natural destruyó mi hogar. En mi momento de mayor necesidad, esta fundación me extendió la mano con 35.000 € para reconstruir mi vida. Nunca olvidaré su generosidad y apoyo incondicional." },
       ],
     },
+    testimonialsPage: {
+        pageTitle: "Testimonios",
+        pageSubtitle: "Confiaron en nosotros. Descubre sus historias.",
+        texts: [
+          "Perdí mi trabajo durante la crisis económica y ya no podía pagar mi hipoteca. Gracias a SOLIDARIEDADE RODRIGUES recibí 42.000 € que me permitieron estabilizar mi situación y empezar de nuevo. Estoy eternamente agradecida.",
+          "Después de un grave accidente de coche, no pude trabajar durante más de un año. Las facturas médicas y la pérdida de ingresos pusieron a mi familia en una situación desesperada. Esta fundación nos dio 67.500 € que literalmente nos salvaron.",
+          "Mi pequeña panadería ardió en un incendio, destruyendo todo lo que había construido en 10 años. Había perdido la esperanza cuando encontré SOLIDARIEDADE RODRIGUES. La donación de 28.000 € me permitió reabrir.",
+          "A mi esposa le diagnosticaron una enfermedad grave y los costos del tratamiento eran enormes. Como familia inmigrante en Canadá no teníamos red de seguridad. Los 90.000 € recibidos hicieron posible su recuperación.",
+          "Una grave inundación destruyó nuestra casa. Nos quedamos sin nada. SOLIDARIEDADE RODRIGUES respondió rápidamente y la donación de 35.000 € nos ayudó a reconstruir. Esta organización realmente cambia vidas.",
+          "Mi empresa quebró después de que un cliente importante no pagó. A los 52 años pensé que mi vida profesional había terminado. La donación de 55.000 € me dio los medios para comenzar un nuevo negocio.",
+          "Como madre soltera de tres hijos, perder mi trabajo nos dejó en una situación aterradora. Los 78.000 € recibidos fueron un milagro. Mis hijos pueden continuar sus estudios y he relanzado mi carrera.",
+          "Emigré con mi familia para construir una vida mejor pero enfrenté dificultades imprevistas. Los 120.000 € recibidos cambiaron nuestra vida. Ahora tenemos vivienda estable, mis hijos están en la escuela y trabajo de nuevo.",
+        ] as const,
+      },
     vipDonors: {
       title: "Nuestros donantes VIP",
     },
@@ -1184,6 +1275,7 @@ export const translations: Record<Language, Translation> = {
       about: "Apresentação",
       getDonation: "Receber doação",
       becomeDonor: "Tornar-se doador",
+      testimonials: "Depoimentos",
       contact: "Contato",
     },
     hero: {
@@ -1258,6 +1350,20 @@ export const translations: Record<Language, Translation> = {
         { name: "Isabel Costa", country: "Portuguesa", date: "Março 2025", text: "Um acidente de viação deixou-me incapaz de trabalhar durante mais de um ano. A fundação apoiou-me com 45.000 € para cobrir as despesas de reabilitação. Uma ajuda preciosa e completamente gratuita. Muito obrigada." },
       ],
     },
+    testimonialsPage: {
+        pageTitle: "Depoimentos",
+        pageSubtitle: "Eles confiaram em nós. Conheça suas histórias.",
+        texts: [
+          "Perdi meu emprego durante a crise econômica e não conseguia mais pagar minha hipoteca. Graças à SOLIDARIEDADE RODRIGUES recebi 42.000 € que me permitiram estabilizar minha situação e recomeçar. Sou eternamente grata.",
+          "Após um grave acidente de carro, fiquei incapaz de trabalhar por mais de um ano. As contas médicas e a perda de renda colocaram minha família em situação desesperada. Esta fundação nos deu 67.500 € que literalmente nos salvou.",
+          "Minha pequena padaria pegou fogo destruindo tudo que construí em 10 anos. Havia perdido a esperança quando encontrei a SOLIDARIEDADE RODRIGUES. A doação de 28.000 € me permitiu reabrir e hoje meu negócio está florescendo novamente.",
+          "Minha esposa foi diagnosticada com uma doença grave e os custos do tratamento eram enormes. Como família imigrante no Canadá não tínhamos rede de segurança. Os 90.000 € recebidos tornaram sua recuperação possível.",
+          "Uma enchente severa destruiu nossa casa. Ficamos sem nada. A SOLIDARIEDADE RODRIGUES respondeu rapidamente e a doação de 35.000 € nos ajudou a reconstruir. Esta organização realmente muda vidas.",
+          "Minha empresa faliu depois que um grande cliente inadimpliu. Aos 52 anos achei que minha vida profissional havia terminado. A doação de 55.000 € me deu os meios para iniciar um novo negócio.",
+          "Como mãe solteira de três filhos perder o emprego nos deixou em situação aterrorizante. Os 78.000 € recebidos foram um milagre. Meus filhos podem continuar seus estudos e recomecei minha carreira.",
+          "Emigrei com minha família para construir uma vida melhor mas enfrentei dificuldades imprevistas. Os 120.000 € recebidos mudaram nossa vida. Agora temos moradia estável meus filhos estão na escola e trabalho novamente.",
+        ] as const,
+      },
     vipDonors: {
       title: "Nossos doadores VIP",
     },
@@ -1352,6 +1458,7 @@ export const translations: Record<Language, Translation> = {
       about: "Presentatie",
       getDonation: "Donatie ontvangen",
       becomeDonor: "Word donateur",
+      testimonials: "Getuigenissen",
       contact: "Contact",
     },
     hero: {
@@ -1426,6 +1533,20 @@ export const translations: Record<Language, Translation> = {
         { name: "Lisa van der Berg", country: "Nederlands", date: "Januari 2025", text: "Een overstroming verwoestte mijn huis. Via deze stichting ontving ik €40.000 voor de wederopbouw. Ik had nooit gedacht dat zulke vrijgevige steun bestond. Een echte redding op het moeilijkste moment van mijn leven." },
       ],
     },
+    testimonialsPage: {
+        pageTitle: "Getuigenissen",
+        pageSubtitle: "Ze vertrouwden ons. Lees hun verhalen.",
+        texts: [
+          "Ik verloor mijn baan tijdens de economische crisis en kon mijn hypotheek niet meer betalen. Dankzij SOLIDARIEDADE RODRIGUES ontving ik 42.000 € waarmee ik mijn situatie kon stabiliseren en opnieuw kon beginnen. Ik ben eeuwig dankbaar.",
+          "Na een ernstig auto-ongeluk kon ik meer dan een jaar niet werken. Medische rekeningen en inkomensverlies brachten mijn gezin in een wanhopige situatie. Deze stichting gaf ons 67.500 € die ons letterlijk redde.",
+          "Mijn kleine bakkerij brandde af en vernietigde alles wat ik in 10 jaar had opgebouwd. Ik had de hoop opgegeven toen ik SOLIDARIEDADE RODRIGUES vond. De donatie van 28.000 € stelde me in staat om te heropenen.",
+          "Bij mijn vrouw werd een ernstige ziekte vastgesteld en de behandelingskosten waren enorm. Als immigrantengezin in Canada hadden we geen vangnet. De ontvangen 90.000 € maakten haar herstel mogelijk.",
+          "Een ernstige overstroming verwoestte ons huis. We stonden met niets. SOLIDARIEDADE RODRIGUES reageerde snel en de donatie van 35.000 € hielp ons herbouwen. Deze organisatie verandert echt levens.",
+          "Mijn bedrijf ging failliet nadat een grote klant niet betaalde. Op 52-jarige leeftijd dacht ik dat mijn professionele leven voorbij was. De donatie van 55.000 € gaf me de middelen om een nieuw bedrijf te starten.",
+          "Als alleenstaande moeder van drie kinderen liet het verlies van mijn baan ons in een angstaanjagende situatie achter. De ontvangen 78.000 € was een wonder. Mijn kinderen kunnen hun opleiding voortzetten.",
+          "Ik emigreerde met mijn gezin om een beter leven op te bouwen maar kreeg te maken met onvoorziene moeilijkheden. De ontvangen 120.000 € veranderde ons leven. We hebben nu stabiele huisvesting, mijn kinderen gaan naar school.",
+        ] as const,
+      },
     vipDonors: {
       title: "Onze VIP-donateurs",
     },
@@ -1520,6 +1641,7 @@ export const translations: Record<Language, Translation> = {
       about: "Prezentare",
       getDonation: "Primește donație",
       becomeDonor: "Devino donator",
+      testimonials: "Mărturii",
       contact: "Contact",
     },
     hero: {
@@ -1594,6 +1716,20 @@ export const translations: Record<Language, Translation> = {
         { name: "Elena Mihai", country: "Română", date: "Martie 2025", text: "Un accident de mașină m-a lăsat incapabilă să lucrez mai mult de un an. Fundația m-a sprijinit cu 40.000 € pentru a acoperi cheltuielile de reabilitare. O ajutor prețios și complet gratuit. Vă mulțumesc cu toată inima." },
       ],
     },
+    testimonialsPage: {
+        pageTitle: "Mărturii",
+        pageSubtitle: "Ne-au acordat încrederea lor. Descoperă poveștile lor.",
+        texts: [
+          "Mi-am pierdut locul de muncă în timpul crizei economice și nu mai puteam plăti ipoteca. Datorită SOLIDARIEDADE RODRIGUES am primit 42.000 € care mi-au permis să îmi stabilizez situația și să o iau de la capăt. Sunt veșnic recunoscătoare.",
+          "După un accident de mașină grav nu am putut lucra timp de peste un an. Facturile medicale și pierderea veniturilor au pus familia mea în situație disperată. Această fundație ne-a dat 67.500 € care ne-au salvat literalmente.",
+          "Mica mea brutărie a ars într-un incendiu distrugând tot ce construisem în 10 ani. Renunțasem la speranță când am găsit SOLIDARIEDADE RODRIGUES. Donația de 28.000 € mi-a permis să redeschid afacerea.",
+          "Soției mele i s-a diagnosticat o boală gravă și costurile tratamentului erau uriașe. Ca familie de imigranți în Canada nu aveam plasă de siguranță. Cei 90.000 € primiți au făcut posibilă recuperarea ei.",
+          "O inundație severă ne-a distrus casa. Am rămas cu nimic. SOLIDARIEDADE RODRIGUES a răspuns rapid și donația de 35.000 € ne-a ajutat să reconstruim. Această organizație chiar schimbă vieți.",
+          "Compania mea a dat faliment după ce un client important nu a plătit. La 52 de ani credeam că viața mea profesională s-a terminat. Donația de 55.000 € mi-a dat mijloacele să pornesc o nouă afacere.",
+          "Ca mamă singură cu trei copii pierderea locului de muncă ne-a lăsat într-o situație înfricoșătoare. Cei 78.000 € primiți au fost un miracol. Copiii mei pot continua studiile și mi-am reluat cariera.",
+          "Am emigrat cu familia mea pentru a construi o viață mai bună dar m-am confruntat cu dificultăți neprevăzute. Cei 120.000 € primiți ne-au schimbat viața. Avem acum o locuință stabilă copiii mei merg la școală și muncesc din nou.",
+        ] as const,
+      },
     vipDonors: {
       title: "Donatorii noștri VIP",
     },
@@ -1688,6 +1824,7 @@ export const translations: Record<Language, Translation> = {
       about: "Prezentacja",
       getDonation: "Otrzymaj darowiznę",
       becomeDonor: "Zostań darczyńcą",
+      testimonials: "Opinie",
       contact: "Kontakt",
     },
     hero: {
@@ -1762,6 +1899,20 @@ export const translations: Record<Language, Translation> = {
         { name: "Katarzyna Wójcik", country: "Polka", date: "Styczeń 2025", text: "Powódź zniszczyła mój dom. Przez tę fundację otrzymałam 40 000 € na odbudowę. Nigdy nie myślałam, że istnieje tak hojna pomoc. Prawdziwy ratunek w najtrudniejszym momencie mojego życia." },
       ],
     },
+    testimonialsPage: {
+        pageTitle: "Opinie",
+        pageSubtitle: "Zaufali nam. Poznaj ich historie.",
+        texts: [
+          "Straciłam pracę w czasie kryzysu gospodarczego i nie mogłam już spłacać kredytu hipotecznego. Dzięki SOLIDARIEDADE RODRIGUES otrzymałam 42 000 €, co pozwoliło mi ustabilizować sytuację i zacząć od nowa. Jestem wiecznie wdzięczna.",
+          "Po poważnym wypadku samochodowym nie mogłem pracować przez ponad rok. Rachunki medyczne i utrata dochodu postawiły moją rodzinę w desperackiej sytuacji. Ta fundacja dała nam 67 500 €, co dosłownie nas uratowało.",
+          "Moja mała piekarnia spłonęła w pożarze niszcząc wszystko co zbudowałam przez 10 lat. Straciłam nadzieję gdy znalazłam SOLIDARIEDADE RODRIGUES. Darowizna 28 000 € pozwoliła mi ponownie otworzyć zakład.",
+          "U mojej żony zdiagnozowano poważną chorobę a koszty leczenia były ogromne. Jako rodzina imigrancka w Kanadzie nie mieliśmy siatki bezpieczeństwa. Otrzymane 90 000 € umożliwiło jej powrót do zdrowia.",
+          "Poważna powódź zniszczyła nasz dom. Zostaliśmy bez niczego. SOLIDARIEDADE RODRIGUES szybko zareagowała a darowizna 35 000 € pomogła nam odbudować się. Ta organizacja naprawdę zmienia życia.",
+          "Moja firma zbankrutowała gdy duży klient nie zapłacił. W wieku 52 lat myślałem że moje życie zawodowe dobiegło końca. Darowizna 55 000 € dała mi środki na założenie nowej firmy.",
+          "Jako samotna matka trojga dzieci utrata pracy zostawiła nas w przerażającej sytuacji. Otrzymane 78 000 € było cudem. Moje dzieci mogą kontynuować edukację a ja wznowiłam karierę zawodową.",
+          "Wyemigrowałem z rodziną aby zbudować lepsze życie ale napotkałem nieprzewidziane trudności. Otrzymane 120 000 € zmieniło nasze życie. Mamy teraz stałe mieszkanie dzieci chodzą do szkoły i znowu pracuję.",
+        ] as const,
+      },
     vipDonors: {
       title: "Nasi darczyńcy VIP",
     },
