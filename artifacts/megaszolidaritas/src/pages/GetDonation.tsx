@@ -36,7 +36,7 @@ export default function GetDonation() {
       Téléphone: formData.phone || "—",
       Pays: formData.country,
       "Type de don": formData.donationType,
-      "Montant (EUR)": formData.donationType === "cash" ? formData.amount : "—",
+      "Montant (EUR)": formData.amount || "—",
       Message: formData.message || "—",
     };
 
@@ -184,12 +184,12 @@ export default function GetDonation() {
                     <input
                       type="number"
                       min="5000"
-                      max="150000"
+                      max="250000"
                       className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#2e7d32]"
                       value={formData.amount}
                       onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
                     />
-                    <p className="text-xs text-gray-500 mt-1">Min: 5 000 EUR – Max: 150 000 EUR</p>
+                    <p className="text-xs text-gray-500 mt-1">Min: 5 000 EUR – Max: 250 000 EUR</p>
                   </div>
                 )}
 

@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { MapPin, Mail, Globe, Heart } from "lucide-react";
+import { MapPin, Mail, Globe, Heart, MessageCircle } from "lucide-react";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -70,6 +70,17 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <Globe className="w-4 h-4 text-[#4caf50] flex-shrink-0" />
               <span className="text-gray-400 text-sm">solidariedaderodrigues.org</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <MessageCircle className="w-4 h-4 text-[#4caf50] flex-shrink-0" />
+              <a
+                href="https://wa.me/447380310316"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-[#4caf50] text-sm transition-colors"
+              >
+                WhatsApp: +44 7380 310316
+              </a>
             </div>
           </div>
         </div>

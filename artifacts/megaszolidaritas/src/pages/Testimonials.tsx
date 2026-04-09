@@ -91,7 +91,7 @@ export default function Testimonials() {
         <div className="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-10 text-center">
           {[
             { num: "12,400+", label: t.about?.projects ?? "Bénéficiaires" },
-            { num: "150,000 €", label: "Maximum" },
+            { num: "250,000 €", label: "Maximum" },
             { num: "10", label: "Langues" },
             { num: "98%", label: "Satisfaction" },
           ].map((s) => (

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { MapPin, Mail, Globe } from "lucide-react";
+import { MapPin, Mail, Globe, MessageCircle } from "lucide-react";
 import { WEB3FORMS_ACCESS_KEY, WEB3FORMS_ENDPOINT } from "@/config/web3forms";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -223,6 +223,20 @@ export default function Contact() {
                     <div>
                       <p className="text-xs text-gray-500 font-semibold uppercase mb-1">{t.contact.website}</p>
                       <span className="text-gray-700 text-sm">solidariedaderodrigues.org</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <MessageCircle className="w-5 h-5 text-[#2e7d32] mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="text-xs text-gray-500 font-semibold uppercase mb-1">WhatsApp</p>
+                      <a
+                        href="https://wa.me/447380310316"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#2e7d32] hover:underline text-sm font-medium"
+                      >
+                        +44 7380 310316
+                      </a>
                     </div>
                   </div>
                 </div>

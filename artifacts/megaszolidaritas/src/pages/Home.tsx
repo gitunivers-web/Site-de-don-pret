@@ -207,7 +207,7 @@ export default function Home() {
                 }}
               />
               <div className="absolute -bottom-5 -left-5 bg-[#f57c00] text-white font-bold text-center py-4 px-6 rounded-lg shadow-lg hidden md:block">
-                <div className="text-3xl font-extrabold">150 000€</div>
+                <div className="text-3xl font-extrabold">250 000€</div>
                 <div className="text-sm">don max.</div>
               </div>
             </div>
