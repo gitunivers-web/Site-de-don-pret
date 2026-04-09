@@ -77,20 +77,20 @@ export default function GetDonation() {
                 <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-4xl">✓</span>
                 </div>
-                <h3 className="text-2xl font-bold text-[#2e7d32] mb-2">Merci !</h3>
-                <p className="text-gray-600">Votre demande a été envoyée avec succès. Nous vous contacterons bientôt.</p>
+                <h3 className="text-2xl font-bold text-[#2e7d32] mb-2">{t.getDonation.thankYou}</h3>
+                <p className="text-gray-600">{t.getDonation.successDesc}</p>
                 <button
                   onClick={() => { setStatus("idle"); setFormData({ title: "", lastName: "", firstName: "", email: "", phone: "", country: "", donationType: "", amount: "", message: "" }); }}
                   className="mt-6 text-sm text-[#2e7d32] underline"
                 >
-                  Soumettre une nouvelle demande
+                  {t.getDonation.newRequest}
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 {status === "error" && (
                   <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 text-sm">
-                    Une erreur est survenue. Veuillez réessayer ou nous contacter par email.
+                    {t.getDonation.errorMsg}
                   </div>
                 )}
 
@@ -208,7 +208,7 @@ export default function GetDonation() {
                   disabled={status === "loading"}
                   className="w-full bg-[#2e7d32] hover:bg-[#1b5e20] disabled:opacity-60 text-white font-bold py-4 rounded-lg transition-colors text-lg"
                 >
-                  {status === "loading" ? "Envoi en cours…" : t.getDonation.submit}
+                  {status === "loading" ? t.getDonation.sending : t.getDonation.submit}
                 </button>
               </form>
             )}

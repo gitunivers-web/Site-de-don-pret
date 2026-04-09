@@ -81,6 +81,11 @@ export interface Translation {
       text: string;
     }>;
   };
+  testimonialsPage: {
+    pageTitle: string;
+    pageSubtitle: string;
+    texts: readonly string[];
+  };
   vipDonors: {
     title: string;
   };
@@ -126,6 +131,11 @@ export interface Translation {
     amount: string;
     message: string;
     submit: string;
+    thankYou: string;
+    successDesc: string;
+    newRequest: string;
+    sending: string;
+    errorMsg: string;
   };
   becomeDonor: {
     title: string;
@@ -146,6 +156,11 @@ export interface Translation {
     message: string;
     submit: string;
     getPaymentLink: string;
+    thankYou: string;
+    successDesc: string;
+    newRequest: string;
+    sending: string;
+    errorMsg: string;
   };
   contact: {
     title: string;
@@ -167,6 +182,11 @@ export interface Translation {
     addressValue: string;
     emailLabel: string;
     website: string;
+    thankYou: string;
+    successDesc: string;
+    newRequest: string;
+    sending: string;
+    errorMsg: string;
   };
 }
 
@@ -311,6 +331,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Összeg (EUR)",
       message: "Üzenet",
       submit: "KÉRÉSEM BEKÜLDÉSE",
+      thankYou: "Köszönöm!",
+      successDesc: "Kérelmét sikeresen elküldtük. Hamarosan felvesszük Önnel a kapcsolatot.",
+      newRequest: "Új kérelem benyújtása",
+      sending: "Küldés folyamatban…",
+      errorMsg: "Hiba történt. Kérjük, próbálja meg újra, vagy lépjen kapcsolatba velünk e-mailben.",
     },
     becomeDonor: {
       title: "Adományozás",
@@ -330,6 +355,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Összeg (EUR)",
       message: "Üzenet",
       submit: "BEKÜLDÉS",
+      thankYou: "Köszönöm!",
+      successDesc: "Regisztrációját sikeresen rögzítettük. Hamarosan felvesszük Önnel a kapcsolatot.",
+      newRequest: "Új regisztráció benyújtása",
+      sending: "Küldés folyamatban…",
+      errorMsg: "Hiba történt. Kérjük, próbálja meg újra, vagy lépjen kapcsolatba velünk e-mailben.",
       getPaymentLink: "Szerezze be a fizetési linket vagy a szállítási címet az adományhoz",
     },
     contact: {
@@ -348,6 +378,11 @@ export const translations: Record<Language, Translation> = {
       subject: "Tárgy",
       message: "Üzenet",
       submit: "ÜZENET KÜLDÉSE",
+      thankYou: "Köszönöm!",
+      successDesc: "Üzenetét sikeresen elküldtük.",
+      newRequest: "Újabb üzenet küldése",
+      sending: "Küldés folyamatban…",
+      errorMsg: "Hiba történt. Kérjük, próbálja meg újra, vagy írjon erre a címre: contact@solidariedaderodrigues.org",
       address: "Cím",
       addressValue: "25 Old Broad Street, Suite 8, London EC2N 1HN, United Kingdom",
       emailLabel: "Email",
@@ -494,6 +529,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Montant (EUR)",
       message: "Message",
       submit: "SOUMETTRE MA DEMANDE",
+      thankYou: "Merci !",
+      successDesc: "Votre demande a été envoyée avec succès. Nous vous contacterons bientôt.",
+      newRequest: "Soumettre une nouvelle demande",
+      sending: "Envoi en cours…",
+      errorMsg: "Une erreur est survenue. Veuillez réessayer ou nous contacter par email.",
     },
     becomeDonor: {
       title: "Faire un don",
@@ -513,6 +553,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Montant (EUR)",
       message: "Message",
       submit: "SOUMETTRE",
+      thankYou: "Merci !",
+      successDesc: "Votre inscription a été enregistrée avec succès. Nous vous contacterons bientôt.",
+      newRequest: "Soumettre une nouvelle inscription",
+      sending: "Envoi en cours…",
+      errorMsg: "Une erreur est survenue. Veuillez réessayer ou nous écrire à contact@solidariedaderodrigues.org",
       getPaymentLink: "Obtenez le lien de paiement ou l'adresse de livraison pour le don",
     },
     contact: {
@@ -531,6 +576,11 @@ export const translations: Record<Language, Translation> = {
       subject: "Sujet",
       message: "Message",
       submit: "ENVOYER LE MESSAGE",
+      thankYou: "Merci !",
+      successDesc: "Votre message a été envoyé avec succès.",
+      newRequest: "Envoyer un autre message",
+      sending: "Envoi en cours…",
+      errorMsg: "Une erreur est survenue. Veuillez réessayer ou nous écrire directement à contact@solidariedaderodrigues.org",
       address: "Adresse",
       addressValue: "25 Old Broad Street, Suite 8, London EC2N 1HN, United Kingdom",
       emailLabel: "Email",
@@ -677,6 +727,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Amount (EUR)",
       message: "Message",
       submit: "SUBMIT MY REQUEST",
+      thankYou: "Thank you!",
+      successDesc: "Your request has been sent successfully. We will contact you soon.",
+      newRequest: "Submit a new request",
+      sending: "Sending…",
+      errorMsg: "An error occurred. Please try again or contact us by email.",
     },
     becomeDonor: {
       title: "Make a Donation",
@@ -696,6 +751,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Amount (EUR)",
       message: "Message",
       submit: "SUBMIT",
+      thankYou: "Thank you!",
+      successDesc: "Your registration has been recorded successfully. We will contact you soon.",
+      newRequest: "Submit a new registration",
+      sending: "Sending…",
+      errorMsg: "An error occurred. Please try again or email us at contact@solidariedaderodrigues.org",
       getPaymentLink: "Get the payment link or delivery address for the donation",
     },
     contact: {
@@ -714,6 +774,11 @@ export const translations: Record<Language, Translation> = {
       subject: "Subject",
       message: "Message",
       submit: "SEND MESSAGE",
+      thankYou: "Thank you!",
+      successDesc: "Your message has been sent successfully.",
+      newRequest: "Send another message",
+      sending: "Sending…",
+      errorMsg: "An error occurred. Please try again or email us directly at contact@solidariedaderodrigues.org",
       address: "Address",
       addressValue: "25 Old Broad Street, Suite 8, London EC2N 1HN, United Kingdom",
       emailLabel: "Email",
@@ -860,6 +925,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Importo (EUR)",
       message: "Messaggio",
       submit: "INVIA LA MIA RICHIESTA",
+      thankYou: "Grazie!",
+      successDesc: "La sua richiesta è stata inviata con successo. La contatteremo presto.",
+      newRequest: "Invia una nuova richiesta",
+      sending: "Invio in corso…",
+      errorMsg: "Si è verificato un errore. Riprova o contattaci via email.",
     },
     becomeDonor: {
       title: "Fai una donazione",
@@ -879,6 +949,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Importo (EUR)",
       message: "Messaggio",
       submit: "INVIA",
+      thankYou: "Grazie!",
+      successDesc: "La sua registrazione è stata registrata con successo. La contatteremo presto.",
+      newRequest: "Invia una nuova registrazione",
+      sending: "Invio in corso…",
+      errorMsg: "Si è verificato un errore. Scrivi a contact@solidariedaderodrigues.org",
       getPaymentLink: "Ottieni il link di pagamento o l'indirizzo di consegna per la donazione",
     },
     contact: {
@@ -897,6 +972,11 @@ export const translations: Record<Language, Translation> = {
       subject: "Oggetto",
       message: "Messaggio",
       submit: "INVIA MESSAGGIO",
+      thankYou: "Grazie!",
+      successDesc: "Il suo messaggio è stato inviato con successo.",
+      newRequest: "Invia un altro messaggio",
+      sending: "Invio in corso…",
+      errorMsg: "Si è verificato un errore. Scrivici direttamente a contact@solidariedaderodrigues.org",
       address: "Indirizzo",
       addressValue: "25 Old Broad Street, Suite 8, London EC2N 1HN, United Kingdom",
       emailLabel: "Email",
@@ -1043,6 +1123,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Betrag (EUR)",
       message: "Nachricht",
       submit: "MEINEN ANTRAG EINREICHEN",
+      thankYou: "Danke!",
+      successDesc: "Ihre Anfrage wurde erfolgreich gesendet. Wir werden uns bald bei Ihnen melden.",
+      newRequest: "Eine neue Anfrage stellen",
+      sending: "Wird gesendet…",
+      errorMsg: "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns per E-Mail.",
     },
     becomeDonor: {
       title: "Spende machen",
@@ -1062,6 +1147,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Betrag (EUR)",
       message: "Nachricht",
       submit: "EINREICHEN",
+      thankYou: "Danke!",
+      successDesc: "Ihre Registrierung wurde erfolgreich gespeichert. Wir werden uns bald bei Ihnen melden.",
+      newRequest: "Eine neue Registrierung einreichen",
+      sending: "Wird gesendet…",
+      errorMsg: "Ein Fehler ist aufgetreten. Bitte schreiben Sie uns an contact@solidariedaderodrigues.org",
       getPaymentLink: "Erhalten Sie den Zahlungslink oder die Lieferadresse für die Spende",
     },
     contact: {
@@ -1080,6 +1170,11 @@ export const translations: Record<Language, Translation> = {
       subject: "Betreff",
       message: "Nachricht",
       submit: "NACHRICHT SENDEN",
+      thankYou: "Danke!",
+      successDesc: "Ihre Nachricht wurde erfolgreich gesendet.",
+      newRequest: "Eine weitere Nachricht senden",
+      sending: "Wird gesendet…",
+      errorMsg: "Ein Fehler ist aufgetreten. Bitte schreiben Sie uns direkt an contact@solidariedaderodrigues.org",
       address: "Adresse",
       addressValue: "25 Old Broad Street, Suite 8, London EC2N 1HN, United Kingdom",
       emailLabel: "E-Mail",
@@ -1226,6 +1321,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Importe (EUR)",
       message: "Mensaje",
       submit: "ENVIAR MI SOLICITUD",
+      thankYou: "¡Gracias!",
+      successDesc: "Su solicitud ha sido enviada con éxito. Le contactaremos pronto.",
+      newRequest: "Enviar una nueva solicitud",
+      sending: "Enviando…",
+      errorMsg: "Se produjo un error. Por favor inténtelo de nuevo o contáctenos por correo electrónico.",
     },
     becomeDonor: {
       title: "Hacer una donación",
@@ -1245,6 +1345,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Importe (EUR)",
       message: "Mensaje",
       submit: "ENVIAR",
+      thankYou: "¡Gracias!",
+      successDesc: "Su registro ha sido registrado con éxito. Le contactaremos pronto.",
+      newRequest: "Enviar un nuevo registro",
+      sending: "Enviando…",
+      errorMsg: "Se produjo un error. Escríbanos a contact@solidariedaderodrigues.org",
       getPaymentLink: "Obtenga el enlace de pago o la dirección de entrega para la donación",
     },
     contact: {
@@ -1263,6 +1368,11 @@ export const translations: Record<Language, Translation> = {
       subject: "Asunto",
       message: "Mensaje",
       submit: "ENVIAR MENSAJE",
+      thankYou: "¡Gracias!",
+      successDesc: "Su mensaje ha sido enviado con éxito.",
+      newRequest: "Enviar otro mensaje",
+      sending: "Enviando…",
+      errorMsg: "Se produjo un error. Escríbanos directamente a contact@solidariedaderodrigues.org",
       address: "Dirección",
       addressValue: "25 Old Broad Street, Suite 8, London EC2N 1HN, United Kingdom",
       emailLabel: "Email",
@@ -1409,6 +1519,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Valor (EUR)",
       message: "Mensagem",
       submit: "ENVIAR MEU PEDIDO",
+      thankYou: "Obrigado!",
+      successDesc: "Seu pedido foi enviado com sucesso. Entraremos em contato em breve.",
+      newRequest: "Enviar um novo pedido",
+      sending: "Enviando…",
+      errorMsg: "Ocorreu um erro. Por favor tente novamente ou entre em contato por e-mail.",
     },
     becomeDonor: {
       title: "Fazer uma doação",
@@ -1428,6 +1543,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Valor (EUR)",
       message: "Mensagem",
       submit: "ENVIAR",
+      thankYou: "Obrigado!",
+      successDesc: "Seu cadastro foi registrado com sucesso. Entraremos em contato em breve.",
+      newRequest: "Enviar um novo cadastro",
+      sending: "Enviando…",
+      errorMsg: "Ocorreu um erro. Escreva-nos para contact@solidariedaderodrigues.org",
       getPaymentLink: "Obtenha o link de pagamento ou o endereço de entrega para a doação",
     },
     contact: {
@@ -1446,6 +1566,11 @@ export const translations: Record<Language, Translation> = {
       subject: "Assunto",
       message: "Mensagem",
       submit: "ENVIAR MENSAGEM",
+      thankYou: "Obrigado!",
+      successDesc: "Sua mensagem foi enviada com sucesso.",
+      newRequest: "Enviar outra mensagem",
+      sending: "Enviando…",
+      errorMsg: "Ocorreu um erro. Escreva-nos diretamente para contact@solidariedaderodrigues.org",
       address: "Endereço",
       addressValue: "25 Old Broad Street, Suite 8, London EC2N 1HN, United Kingdom",
       emailLabel: "Email",
@@ -1592,6 +1717,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Bedrag (EUR)",
       message: "Bericht",
       submit: "MIJN AANVRAAG INDIENEN",
+      thankYou: "Bedankt!",
+      successDesc: "Uw verzoek is succesvol verzonden. Wij nemen binnenkort contact met u op.",
+      newRequest: "Een nieuw verzoek indienen",
+      sending: "Verzenden…",
+      errorMsg: "Er is een fout opgetreden. Probeer het opnieuw of neem contact met ons op via e-mail.",
     },
     becomeDonor: {
       title: "Een donatie doen",
@@ -1611,6 +1741,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Bedrag (EUR)",
       message: "Bericht",
       submit: "INDIENEN",
+      thankYou: "Bedankt!",
+      successDesc: "Uw registratie is succesvol opgeslagen. Wij nemen binnenkort contact met u op.",
+      newRequest: "Een nieuwe registratie indienen",
+      sending: "Verzenden…",
+      errorMsg: "Er is een fout opgetreden. Schrijf ons op contact@solidariedaderodrigues.org",
       getPaymentLink: "Ontvang de betalingslink of het bezorgadres voor de donatie",
     },
     contact: {
@@ -1629,6 +1764,11 @@ export const translations: Record<Language, Translation> = {
       subject: "Onderwerp",
       message: "Bericht",
       submit: "BERICHT STUREN",
+      thankYou: "Bedankt!",
+      successDesc: "Uw bericht is succesvol verzonden.",
+      newRequest: "Nog een bericht sturen",
+      sending: "Verzenden…",
+      errorMsg: "Er is een fout opgetreden. Schrijf ons direct op contact@solidariedaderodrigues.org",
       address: "Adres",
       addressValue: "25 Old Broad Street, Suite 8, London EC2N 1HN, United Kingdom",
       emailLabel: "Email",
@@ -1775,6 +1915,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Sumă (EUR)",
       message: "Mesaj",
       submit: "TRIMITEȚI CEREREA MEA",
+      thankYou: "Mulțumesc!",
+      successDesc: "Cererea dvs. a fost trimisă cu succes. Vă vom contacta în curând.",
+      newRequest: "Trimite o nouă cerere",
+      sending: "Se trimite…",
+      errorMsg: "A apărut o eroare. Vă rugăm să încercați din nou sau să ne contactați prin e-mail.",
     },
     becomeDonor: {
       title: "Faceți o donație",
@@ -1794,6 +1939,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Sumă (EUR)",
       message: "Mesaj",
       submit: "TRIMITE",
+      thankYou: "Mulțumesc!",
+      successDesc: "Înregistrarea dvs. a fost înregistrată cu succes. Vă vom contacta în curând.",
+      newRequest: "Trimite o nouă înregistrare",
+      sending: "Se trimite…",
+      errorMsg: "A apărut o eroare. Scrieți-ne la contact@solidariedaderodrigues.org",
       getPaymentLink: "Obțineți linkul de plată sau adresa de livrare pentru donație",
     },
     contact: {
@@ -1812,6 +1962,11 @@ export const translations: Record<Language, Translation> = {
       subject: "Subiect",
       message: "Mesaj",
       submit: "TRIMITEȚI MESAJUL",
+      thankYou: "Mulțumesc!",
+      successDesc: "Mesajul dvs. a fost trimis cu succes.",
+      newRequest: "Trimite un alt mesaj",
+      sending: "Se trimite…",
+      errorMsg: "A apărut o eroare. Scrieți-ne direct la contact@solidariedaderodrigues.org",
       address: "Adresă",
       addressValue: "25 Old Broad Street, Suite 8, London EC2N 1HN, United Kingdom",
       emailLabel: "Email",
@@ -1958,6 +2113,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Kwota (EUR)",
       message: "Wiadomość",
       submit: "PRZEŚLIJ MOJE ŻĄDANIE",
+      thankYou: "Dziękujemy!",
+      successDesc: "Twój wniosek został wysłany pomyślnie. Wkrótce się z Tobą skontaktujemy.",
+      newRequest: "Złóż nowy wniosek",
+      sending: "Wysyłanie…",
+      errorMsg: "Wystąpił błąd. Spróbuj ponownie lub skontaktuj się z nami przez e-mail.",
     },
     becomeDonor: {
       title: "Dokonaj darowizny",
@@ -1977,6 +2137,11 @@ export const translations: Record<Language, Translation> = {
       amount: "Kwota (EUR)",
       message: "Wiadomość",
       submit: "PRZEŚLIJ",
+      thankYou: "Dziękujemy!",
+      successDesc: "Twoja rejestracja została pomyślnie zapisana. Wkrótce się z Tobą skontaktujemy.",
+      newRequest: "Złóż nową rejestrację",
+      sending: "Wysyłanie…",
+      errorMsg: "Wystąpił błąd. Napisz do nas na contact@solidariedaderodrigues.org",
       getPaymentLink: "Uzyskaj link do płatności lub adres dostawy dla darowizny",
     },
     contact: {
@@ -1995,6 +2160,11 @@ export const translations: Record<Language, Translation> = {
       subject: "Temat",
       message: "Wiadomość",
       submit: "WYŚLIJ WIADOMOŚĆ",
+      thankYou: "Dziękujemy!",
+      successDesc: "Twoja wiadomość została wysłana pomyślnie.",
+      newRequest: "Wyślij kolejną wiadomość",
+      sending: "Wysyłanie…",
+      errorMsg: "Wystąpił błąd. Napisz do nas bezpośrednio na contact@solidariedaderodrigues.org",
       address: "Adres",
       addressValue: "25 Old Broad Street, Suite 8, London EC2N 1HN, United Kingdom",
       emailLabel: "Email",

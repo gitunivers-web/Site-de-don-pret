@@ -77,20 +77,20 @@ export default function BecomeDonor() {
                 <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-4xl">✓</span>
                 </div>
-                <h3 className="text-2xl font-bold text-[#f57c00] mb-2">Merci !</h3>
-                <p className="text-gray-600">Votre inscription a été enregistrée avec succès. Nous vous contacterons bientôt.</p>
+                <h3 className="text-2xl font-bold text-[#f57c00] mb-2">{t.becomeDonor.thankYou}</h3>
+                <p className="text-gray-600">{t.becomeDonor.successDesc}</p>
                 <button
                   onClick={() => { setStatus("idle"); setFormData({ title: "", lastName: "", firstName: "", email: "", phone: "", country: "", donationType: "", amount: "", message: "" }); }}
                   className="mt-6 text-sm text-[#f57c00] underline"
                 >
-                  Soumettre une nouvelle inscription
+                  {t.becomeDonor.newRequest}
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 {status === "error" && (
                   <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 text-sm">
-                    Une erreur est survenue. Veuillez réessayer ou nous contacter par email.
+                    {t.becomeDonor.errorMsg}
                   </div>
                 )}
 
@@ -208,7 +208,7 @@ export default function BecomeDonor() {
                   disabled={status === "loading"}
                   className="w-full bg-[#f57c00] hover:bg-[#e65100] disabled:opacity-60 text-white font-bold py-4 rounded-lg transition-colors text-lg"
                 >
-                  {status === "loading" ? "Envoi en cours…" : t.becomeDonor.submit}
+                  {status === "loading" ? t.becomeDonor.sending : t.becomeDonor.submit}
                 </button>
               </form>
             )}
